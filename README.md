@@ -1,131 +1,157 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Zero Waste Cooking
 
-Welcome USER_NAME,
+![Zero Waste Cooking Logo](/static/images/logo.jpg)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to the Zero Waste Cooking project! This Django-based web application aims to promote sustainable cooking practices by helping users discover recipes based on ingredients they already have, reducing food waste and promoting a more environmentally friendly approach to cooking.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+[View the live project here](#) (Link to be added when deployed)
 
-## Gitpod Reminders
+![Responsive Mockup](#) 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Contents
 
-`python3 -m http.server`
+- [About the Site](#about-the-site)
+- [User Experience (UX)](#user-experience-ux)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
-A blue button should appear to click: _Make Public_,
+## About the Site
 
-Another blue button should appear to click: _Open Browser_.
+### Primary Goal
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+The Zero Waste Cooking website aims to reduce food waste and promote more environmentally friendly cooking habits by providing a platform for users to discover recipes based on ingredients they already have, share their own recipes, and learn about sustainable cooking practices.
 
-A blue button should appear to click: _Make Public_,
+### Target Users
 
-Another blue button should appear to click: _Open Browser_.
+Our target audience includes:
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Anyone looking to save money by making the most of their existing ingredients
+- Home cooks of all skill levels seeking inspiration for meal preparations using available ingredients
+- People interested in sharing their own zero-waste recipes and cooking tips
+- Environmentally conscious individuals looking to reduce food waste
 
-To log into the Heroku toolbelt CLI:
+### Key Features
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Ingredient-based recipe search
+- User authentication (register, login, logout)
+- Create, read, update, and delete recipes
+- Image upload for recipes
+- Comment on recipes
+- Responsive design for various devices
+- Rich text editor for recipe instructions
+- User profile pages for saving preferences and favorite recipes
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+## User Experience (UX)
 
-### Connecting your Mongo database
+### User Stories
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+- As a first-time visitor, I want to easily understand the main purpose of the site and learn more about zero-waste cooking.
+- As a user, I want to search for recipes based on ingredients I have available.
+- As a registered user, I want to be able to share my own recipes with the community.
+- As a user, I want to be able to save my favorite recipes for easy access later.
+- As a user, I want to be able to comment on recipes and engage with other users.
 
-------
+### Design
 
-## Release History
+#### Color Scheme
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The color scheme focuses on sustainability, complemented by a natural, organic feel.
 
-**June 18, 2024,** Add Mongo back into template
+- Primary Color: #
+- Secondary Color: # 
+- Text Color: #
+- Background Color: #
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+#### Typography
 
-**May 28 2024:** Fix Mongo and Links installs
+The site uses a clean, modern sans-serif font for easy readability across devices.
 
-**April 26 2024:** Update node version to 16
+#### Imagery
 
-**September 20 2023:** Update Python version to 3.9.17.
+The imagery used throughout the site focuses on fresh ingredients, finished dishes, and sustainable cooking practices. User-uploaded images for recipes play a central role in the visual experience.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Features
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Existing Features
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+1. **Responsive Navigation Bar**: Allows users to easily navigate the site on all devices.
+2. **User Authentication**: Enables users to register, log in, and log out.
+3. **Recipe Search**: Allows users to search for recipes based on available ingredients.
+4. **Recipe Creation and Management**: Users can create, edit, and delete their own recipes.
+5. **Recipe Details Page**: Displays full recipe information, including ingredients, instructions, and user comments.
+6. **User Profiles**: Personal pages for users to manage their recipes and preferences.
+7. **Commenting System**: Allows users to engage with recipes by leaving comments.
+8. **Responsive Design**: Ensures the site is fully functional and visually appealing on all device sizes.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Features Left to Implement
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Recipe rating system
+- Social media sharing integration
+- Advanced search filters (dietary restrictions, cuisine type, etc.)
+- Meal planning feature
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Technologies Used
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Languages Used
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- HTML5
+- CSS3
+- JavaScript
+- Python
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Frameworks, Libraries & Programs Used
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+1. [Django](https://www.djangoproject.com/): The main framework used to build the project.
+2. [PostgreSQL](https://www.postgresql.org/): Database used to store recipe and user data.
+3. [Bootstrap](https://getbootstrap.com/): Used for responsive design and styling.
+4. [Git](https://git-scm.com/): Used for version control.
+5. [GitHub](https://github.com/): Used to store the project repository.
+6. [Cloudinary](https://cloudinary.com/): Used for image hosting and management. (If implemented)
+7. [Gunicorn](https://gunicorn.org/): Used as the HTTP server for deploying the Django application.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+HTML
+CSS
+Python
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Deployment
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Deploying to Heroku
 
-------
+This project is deployed on Heroku. Here are the steps to deploy:
 
-## FAQ about the uptime script
+1. Create a Heroku account and log in.
+2. Click "New" and select "Create new app".
+3. Choose a name for your app and select your region.
+4. In the "Deploy" tab, connect your GitHub repository.
+5. In the "Settings" tab, add the following config vars:
+   - SECRET_KEY: Your Django secret key
+   - DATABASE_URL: Your PostgreSQL database URL
+   - ALLOWED_HOSTS: The URL of your Heroku app
+6. Add the Python buildpack to your app.
+7. In the "Deploy" tab, enable automatic deploys from your main branch.
+8. Click "Deploy Branch" to deploy your app.
 
-**Why have you added this script?**
+## Credits
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Code
 
-**How will this affect me?**
+- [Django Documentation](https://docs.djangoproject.com/): Used extensively for guidance on Django best practices and implementation.
+- [Bootstrap Documentation](https://getbootstrap.com/docs/): Used for responsive design components and styling.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Content
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- All recipe content is user-generated or added by the site admin for demonstration purposes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Media
 
-**So….?**
+- Default recipe images and site graphics are sourced from [Pexels](https://www.pexels.com/) and [Fontawesome](https://fontawesome.com/).
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Acknowledgements
 
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- SME (Mark), coding coach (John and Roo) and facilitators (Marko, Shelly, Vasi) for continuous helpful feedback.
+- The Code Institute Slack community for their support and advice.
