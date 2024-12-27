@@ -48,11 +48,18 @@ Our target audience includes:
 
 ### User Stories
 
-- As a first-time visitor, I want to easily understand the main purpose of the site and learn more about zero-waste cooking.
-- As a user, I want to search for recipes based on ingredients I have available.
-- As a registered user, I want to be able to share my own recipes with the community.
-- As a user, I want to be able to save my favorite recipes for easy access later.
-- As a user, I want to be able to comment on recipes and engage with other users.
+- (MVP) As a first-time visitor, I want to easily understand the main purpose of the site and learn more about zero-waste cooking, so that I can decide whether to use it or not.
+- (MVP) See recipes and blog posts: As a user, I want to be able to see recipes and blog posts by the admin, so that I can learn more about zero-waste recipes and cooking techniques.
+- (MVP) Sign up as a member to comment: As a user, I want to sign up as a member, so that I can comment on recipes and posts.
+- (MVP) Sign in to post, edit, and delete posts and comments: As a logged-in user, I want to be able to post, edit, and delete posts and comments.
+- (MVP) Comment on recipes and engage with other users: As a user, I want to be able to comment on recipes and engage with other users, so that I can learn from others, share my tips, and build a community around zero-waste cooking.
+- Search for recipes by ingredients: As a user, I want to search for recipes based on ingredients I have available, so that I can use up what I have and avoid food waste.
+- Share recipes with the community: As a registered user, I want to be able to share my own recipes with the community, so that I can contribute to the site and help others.
+- Save favorite recipes: As a user, I want to be able to save my favorite recipes for easy access later, so that I can quickly find and cook the recipes I enjoy.
+- Sign-in to see my personal profile page: As a user, I want to be able to sign in to the app so that I can access my personal information and settings.
+- Scan food barcode to log ingredients: As a user, I want to be able to scan the barcode of a food item, so that I can easily log its ingredients.
+- Show nutrition value and calculate calories: As a user, I want to be able to see the nutrition value of a food item and calculate its calories, so that I can make informed choices about what I eat.
+
 
 ### Design
 
