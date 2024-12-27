@@ -2,5 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def my_recipes(request):
-    return HttpResponse("Hello, Recipes!")
+def my_recipe(request):
+    return HttpResponse("Hello, recipe!")
