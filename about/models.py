@@ -16,4 +16,4 @@ class FeedbackForm(models.Model):
     read = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"Collaboration request from {self.name}"
+        return f"Feedback Form {self.name}"
