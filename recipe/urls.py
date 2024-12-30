@@ -1,10 +1,9 @@
 from django.urls import path
 from . import views
 
-app_name = "recipe"
 
 urlpatterns = [
-    path('', views.PostList.as_view(), name='home'),
+    path('', views.PostList.as_view(), name='recipe'),
     path('<slug:slug>/', views.post_detail, name="post_detail"),
     path('<slug:slug>/edit_comment/<int:comment_id>',
         views.comment_edit, name='comment_edit'),
