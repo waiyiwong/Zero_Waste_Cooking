@@ -2,20 +2,20 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post, Comment
-from .forms import CommentForm
+from .forms import RecipeCommentForm
+from .models import RecipePost, RecipeComment
 
 # Create your views here.
 
 
-class PostList(generic.ListView):
+class RecipePostList(generic.ListView):
     """
-    Returns all published posts in :model:`blog.Post`
-    and displays them in a page of six posts.
+    Returns all published posts in :model:`recipe.Post`
+    and displays them in a page of 3 posts.
     **Context**
 
     ``queryset``
-        All published instances of :model:`blog.Post`
+        All published instances of :model:`recipe.Post`
     ``paginate_by``
         Number of posts per page.
 
@@ -23,25 +23,25 @@ class PostList(generic.ListView):
 
     :template:`recipe/recipe.html`
     """
-    queryset = Post.objects.filter(status=1)
+    queryset = RecipePost.objects.filter(status=1)
     template_name = "recipe/recipe.html"
     paginate_by = 3
 
 
-def post_detail(request, slug):
+def recipe_post_detail(request, slug):
     """
-    Display an individual :model:`blog.Post`.
+    Display an individual :model:`recipe.Post`.
 
     **Context**
 
     ``post``
-        An instance of :model:`blog.Post`.
+        An instance of :model:`recipe.Post`.
     ``comments``
         All approved comments related to the post.
     ``comment_count``
         A count of approved comments related to the post.
     ``comment_form``
-        An instance of :form:`blog.CommentForm`
+        An instance of :form:`recipe.CommentForm`
 
     **Template:**
 
@@ -67,7 +67,7 @@ def post_detail(request, slug):
 
     return render(
         request,
-        "blog/post_detail.html",
+        "recipe/recipe.html",
         {
             "post": post,
             "comments": comments,
@@ -107,7 +107,7 @@ def comment_edit(request, slug, comment_id):
             messages.add_message(request, messages.ERROR,
                                 'Error updating comment!')
 
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    return HttpResponseRedirect(reverse('recipe_post_detail', args=[slug]))
 
 
 def comment_delete(request, slug, comment_id):
@@ -132,4 +132,4 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR,
                             'You can only delete your own comments!')
 
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    return HttpResponseRedirect(reverse('recipe_post_detail', args=[slug]))

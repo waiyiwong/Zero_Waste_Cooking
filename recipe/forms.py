@@ -1,10 +1,10 @@
 from django import forms
-from .models import Post, Comment
+from .models import RecipePost, RecipeComment
 
 
-class PostForm(forms.ModelForm):
+class RecipePostForm(forms.ModelForm):
     class Meta:
-        model = Post
+        model = RecipePost
         fields = ['title', 'slug', 'author', 'featured_image',
                 'ingredients', 'instructions', 'type_of_cuisine',
                 'dietary_categories', 'status']
@@ -14,7 +14,7 @@ class PostForm(forms.ModelForm):
         }
         
 
-class CommentForm(forms.ModelForm):
+class RecipeCommentForm(forms.ModelForm):
     """
     Form class for users to comment on a post
     """
@@ -22,5 +22,5 @@ class CommentForm(forms.ModelForm):
         """
         Specify the django model and order of the fields
         """
-        model = Comment
+        model = RecipeComment
         fields = ('body',)

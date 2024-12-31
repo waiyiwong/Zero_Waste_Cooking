@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Post, Comment
+from .models import RecipePost, RecipeComment
 
 
-@admin.register(Post)
+@admin.register(RecipePost)
 class PostAdmin(SummernoteModelAdmin):
     """
     Lists fields for display in admin, fileds for search,
@@ -18,4 +18,4 @@ class PostAdmin(SummernoteModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Comment)
+admin.site.register(RecipeComment)
