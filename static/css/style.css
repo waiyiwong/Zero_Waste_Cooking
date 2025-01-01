@@ -81,7 +81,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #80A665;
     color: white;
     position: relative;
 }
@@ -98,10 +98,10 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
+    background: #ACC58E;
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    transform: skew(1deg);
     z-index: 100;
 }
 
@@ -116,7 +116,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #80A665;
 }
 
 .post-title {
@@ -153,19 +153,19 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: #80A665;
     border: none;
     background: transparent;
 }
 
 .btn-delete {
     color: #fff;
-    background: #E84610;
+    background: #80A665;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #80A665;
     background: transparent;
     border: none;
 }
