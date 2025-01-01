@@ -21,6 +21,5 @@ def about(request):
         request,
         "about/about.html",
         {"about": about,
-        "feedback_form": feedback_form,
-    },
+         "feedback_form": feedback_form, },
     )
