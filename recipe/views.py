@@ -10,14 +10,14 @@ from .models import RecipePost, RecipeComment
 
 class RecipePostList(generic.ListView):
     """
-    Returns all published posts in :model:`recipe.Post`
-    and displays them in a page of 3 posts.
+    Returns all published recipe_posts in :model:`recipe.Post`
+    and displays them in a page of 3 recipe_posts.
     **Context**
 
     ``queryset``
         All published instances of :model:`recipe.Post`
     ``paginate_by``
-        Number of posts per page.
+        Number of recipe_posts per page.
 
     **Template:**
 
@@ -30,25 +30,25 @@ class RecipePostList(generic.ListView):
 
 def recipe_post_detail(request, slug):
     """
-    Display an individual :model:`recipe.Post`.
+    Display an individual :model:`RecipePost`.
 
     **Context**
 
-    ``post``
-        An instance of :model:`recipe.Post`.
-    ``comments``
-        All approved comments related to the post.
-    ``comment_count``
-        A count of approved comments related to the post.
-    ``comment_form``
-        An instance of :form:`recipe.CommentForm`
+    ``recipe_post``
+        An instance of :model:`RecipePost`.
+    ``recipe_comments``
+        All approved recipe_comments related to the recipe_post.
+    ``recipe_comment_count``
+        A count of approved recipe_comments related to the recipe_post.
+    ``recipe_comment_form``
+        An instance of :form:`recipe.RecipeCommentForm`
 
     **Template:**
 
     :template:`recipe/recipe_post_detail.html`
     """
-    queryset = RecipePost.objects.filter(status=1)
-    recipe_post = get_object_or_404(queryset, slug=slug)
+    recipe_queryset = RecipePost.objects.filter(status=1)
+    recipe_post = get_object_or_404(recipe_queryset, slug=slug)
     recipe_comments = recipe_post.recipe_comments.all().order_by("-created_on")
     recipe_comment_count = recipe_post.recipe_comments.filter(
         approved=False).count()
@@ -80,21 +80,21 @@ def recipe_post_detail(request, slug):
 
 def recipe_comment_edit(request, slug, comment_id):
     """
-    Display an individual comment for edit.
+    Display an individual recipe_comment for edit.
 
     **Context**
 
-    ``post``
-        An instance of :model:`blog.Post`.
-    ``comment``
-        A single comment related to the post.
-    ``comment_form``
-        An instance of :form:`blog.CommentForm`
+    ``recipe_post``
+        An instance of :model:`recipe.RecipePost`.
+    ``recipe_comment``
+        A single recipe_comment related to the recipe_post.
+    ``recipe_comment_form``
+        An instance of :form:`recipe.RecipeCommentForm`
     """
     if request.method == "POST":
 
-        queryset = RecipePost.objects.filter(status=1)
-        recipe_post = get_object_or_404(queryset, slug=slug)
+        recipe_queryset = RecipePost.objects.filter(status=1)
+        recipe_post = get_object_or_404(recipe_queryset, slug=slug)
         recipe_comment = get_object_or_404(RecipeComment, pk=comment_id)
         recipe_comment_form = RecipeCommentForm(data=request.POST,
                                                 instance=recipe_comment)
@@ -113,17 +113,17 @@ def recipe_comment_edit(request, slug, comment_id):
 
 def recipe_comment_delete(request, slug, comment_id):
     """
-    Delete an individual comment.
+    Delete an individual recipe_comment.
 
     **Context**
 
-    ``post``
-        An instance of :model:`blog.Post`.
-    ``comment``
-        A single comment related to the post.
+    ``recipe_post``
+        An instance of :model:`recipe.RecipePost`.
+    ``recipe_comment``
+        A single recipe_comment related to the recipe_post.
     """
-    queryset = RecipePost.objects.filter(status=1)
-    recipe_post = get_object_or_404(queryset, slug=slug)
+    recipe_queryset = RecipePost.objects.filter(status=1)
+    recipe_post = get_object_or_404(recipe_queryset, slug=slug)
     recipe_comment = get_object_or_404(RecipeComment, pk=comment_id)
 
     if recipe_comment.author == request.user:
