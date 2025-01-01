@@ -2,8 +2,22 @@ body {
     background-color: #F9FAFC;
 }
 
+.hero-div {
+    background-color: #282629;
+}
+
+.hero-img {
+    max-width: 100vw;
+    max-height: 80vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: "League Gothic", serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;

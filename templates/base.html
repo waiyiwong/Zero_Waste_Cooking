@@ -42,7 +42,10 @@
             </button>
 
             <!-- Collapsible Navbar -->
-            <div class="collapse navbar-collapse justify-content-center align-items-center" id="navbarText">
+            <div class="collapse navbar-collapse" id="navbarText navbar">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'images/zwc_logo.png' %}" alt="Zero Waste Cooking Logo" class="logo-img">
+                </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{% url 'home' %}">Blog</a>
@@ -50,11 +53,6 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == recipe_url %}active{% endif %}" href="{% url 'recipe' %}">Recipes</a>
                     </li>
-                </ul>
-                <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'images/zwc_logo.png' %}" alt="Zero Waste Cooking Logo" class="logo-img">
-                </a>
-                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
                     </li>
@@ -64,16 +62,29 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">Sign Up</a>
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">Sign Up</a>
                     </li>
                     {% endif %}
                 </ul>
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">Welcome {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3"> </p>
+        {% endif %}  
             </div>
-        </div>
+        </div> 
     </nav>
+
+    <main class="flex-shrink-0 main-bg"> 
+
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+
+    </main>
 
     <!-- displaying Django messages -->
     <div class="container">
@@ -88,19 +99,6 @@
             </div>
         </div>
     </div>
-
-    <main class="flex-shrink-0 main-bg">
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">Welcome {{ user }}</p>
-        {% else %}
-        <p class="text-end m-3">You are not logged in</p>
-        {% endif %}    
-
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-
-    </main>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
