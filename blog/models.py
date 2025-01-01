@@ -21,7 +21,6 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -36,7 +35,7 @@ class Comment(models.Model):
     and :model:`blog.Post`.
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                            related_name="blog_comments")
+                             related_name="blog_comments")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_commenter")
     body = models.TextField()

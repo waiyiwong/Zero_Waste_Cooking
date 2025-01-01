@@ -45,39 +45,40 @@ def recipe_post_detail(request, slug):
 
     **Template:**
 
-    :template:`recipe/recipe.html`
+    :template:`recipe/recipe_post_detail.html`
     """
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
-    comments = post.comments.all().order_by("-created_on")
-    comment_count = post.comments.filter(approved=True).count()
+    queryset = RecipePost.objects.filter(status=1)
+    recipe_post = get_object_or_404(queryset, slug=slug)
+    recipe_comments = recipe_post.recipe_comments.all().order_by("-created_on")
+    recipe_comment_count = recipe_post.recipe_comments.filter(
+        approved=False).count()
     if request.method == "POST":
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.author = request.user
-            comment.post = post
-            comment.save()
+        recipe_comment_form = RecipeCommentForm(data=request.POST)
+        if recipe_comment_form.is_valid():
+            recipe_comment = recipe_comment_form.save(commit=False)
+            recipe_comment.author = request.user
+            recipe_comment.post = recipe_post
+            recipe_comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
                 'Comment submitted and awaiting approval'
             )
 
-    comment_form = CommentForm()
+    recipe_comment_form = RecipeCommentForm()
 
     return render(
         request,
-        "recipe/recipe.html",
+        "recipe/recipe_post_detail.html",
         {
-            "post": post,
-            "comments": comments,
-            "comment_count": comment_count,
-            "comment_form": comment_form
+            "recipe_post": recipe_post,
+            "recipe_comments": recipe_comments,
+            "recipe_comment_count": recipe_comment_count,
+            "recipe_comment_form": recipe_comment_form
         },
     )
 
 
-def comment_edit(request, slug, comment_id):
+def recipe_comment_edit(request, slug, comment_id):
     """
     Display an individual comment for edit.
 
@@ -92,25 +93,25 @@ def comment_edit(request, slug, comment_id):
     """
     if request.method == "POST":
 
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comment = get_object_or_404(Comment, pk=comment_id)
-        comment_form = CommentForm(data=request.POST, instance=comment)
-
-        if comment_form.is_valid() and comment.author == request.user:
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.approved = False
-            comment.save()
+        queryset = RecipePost.objects.filter(status=1)
+        recipe_post = get_object_or_404(queryset, slug=slug)
+        recipe_comment = get_object_or_404(RecipeComment, pk=comment_id)
+        recipe_comment_form = RecipeCommentForm(data=request.POST,
+                                                instance=recipe_comment)
+        if recipe_comment_form.is_valid() and recipe_comment.author == request.user:
+            recipe_comment = recipe_comment_form.save(commit=False)
+            recipe_comment.recipe_post = recipe_post
+            recipe_comment.approved = False
+            recipe_comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
             messages.add_message(request, messages.ERROR,
-                                'Error updating comment!')
+                                 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('recipe_post_detail', args=[slug]))
 
 
-def comment_delete(request, slug, comment_id):
+def recipe_comment_delete(request, slug, comment_id):
     """
     Delete an individual comment.
 
@@ -121,15 +122,15 @@ def comment_delete(request, slug, comment_id):
     ``comment``
         A single comment related to the post.
     """
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
-    comment = get_object_or_404(Comment, pk=comment_id)
+    queryset = RecipePost.objects.filter(status=1)
+    recipe_post = get_object_or_404(queryset, slug=slug)
+    recipe_comment = get_object_or_404(RecipeComment, pk=comment_id)
 
-    if comment.author == request.user:
-        comment.delete()
+    if recipe_comment.author == request.user:
+        recipe_comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
         messages.add_message(request, messages.ERROR,
-                            'You can only delete your own comments!')
+                             'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('recipe_post_detail', args=[slug]))

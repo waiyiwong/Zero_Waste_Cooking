@@ -28,13 +28,13 @@ DIETARY_CATEGORIES = [
     ('Dairy-Free', 'Dairy-Free'),
 ]
 
+
 # Create your models here.
 class RecipePost(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
-    User, on_delete=models.CASCADE, related_name="recipe_posts"
-    )
+        User, on_delete=models.CASCADE, related_name="recipe_posts")
     featured_image = CloudinaryField('image', default='placeholder')
     ingredients = models.TextField(default='')
     instructions = models.TextField(default='')
@@ -63,8 +63,8 @@ class RecipeComment(models.Model):
     Stores a single comment entry related to :model:`auth.User`
     and :model:`blog.Post`.
     """
-    post = models.ForeignKey(RecipePost, on_delete=models.CASCADE,
-                            related_name="recipe_comments")
+    recipe_post = models.ForeignKey(RecipePost, on_delete=models.CASCADE,
+                                    related_name="recipe_comments")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_commenter")
     body = models.TextField()

@@ -18,7 +18,7 @@
                 and we can keep our service improving!</p>
             <!-- add your form here. Your submit button should have the classes of btn, btn-secondary -->
             <form method="post">
-                {{ collaborate_form | crispy }}
+                {{ feedback_form | crispy }}
                 {% csrf_token %}
                 <button class="btn btn-success" type="submit">Submit</button>
             </form>

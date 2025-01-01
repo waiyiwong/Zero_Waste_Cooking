@@ -8,15 +8,15 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
+                <h1 class="post-title">{{ recipe_post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">{{ recipe_post.author }} | {{ recipe_post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in post.featured_image.url %}
+                {% if "placeholder" in recipe_post.featured_image.url %}
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" class="scale" alt="{{ post.title }}">
+                <img src="{{ recipe_post.featured_image.url }}" class="scale" alt="{{ recipe_post.title }}">
                 {% endif %}
             </div>
         </div>
@@ -30,7 +30,9 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <article class="card-text">
-                    {{ post.content | safe }}
+                    {{ recipe_post.ingredients | safe }}
+                    {{ recipe_post.type_of_cuisine | safe }}
+                    {{ recipe_post.dietary_categories | safe }}
                 </article>
             </div>
         </div>
@@ -38,7 +40,7 @@
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comment_count }}
+                <i class="far fa-comments"></i> {{ recipe_comment_count }}
             </strong>
         </div>
         <div class="col-12">
@@ -50,24 +52,24 @@
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-                {% for comment in comments %}
+                {% for recipe_comment in recipe_comments %}
                 <div
-                    class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                    class="p-2 comments{% if not recipe_comment.approved and recipe_comment.author == user %} faded{% elif not recipe_comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
-                        {{ comment.author }}
+                        {{ recipe_comment.author }}
                         <span class="font-weight-normal">
-                            {{ comment.created_on }}
+                            {{ recipe_comment.created_on }}
                         </span> wrote:
                     </p>
-                    <div id="comment{{ comment.id }}">
-                        {{ comment.body | linebreaks }}
+                    <div id="comment{{ recipe_comment.id }}">
+                        {{ recipe_comment.body | linebreaks }}
                     </div>
-                    {% if not comment.approved and comment.author == user %}
+                    {% if not recipe_comment.approved and recipe_comment.author == user %}
                     <p class="approval">This comment is awaiting approval</p>
                     {% endif %}
-                    {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
-                    <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
+                    {% if user.is_authenticated and recipe_comment.author == user %}
+                    <button class="btn btn-delete" data-comment_id="{{ recipe_comment.id }}">Delete</button>
+                    <button class="btn btn-edit" data-comment_id="{{ recipe_comment.id }}">Edit</button>
                     {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
@@ -115,4 +117,3 @@
 {% block extras %}
 <script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
-

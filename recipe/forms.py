@@ -6,13 +6,13 @@ class RecipePostForm(forms.ModelForm):
     class Meta:
         model = RecipePost
         fields = ['title', 'slug', 'author', 'featured_image',
-                'ingredients', 'instructions', 'type_of_cuisine',
-                'dietary_categories', 'status']
+                  'ingredients', 'instructions', 'type_of_cuisine',
+                  'dietary_categories', 'status']
         widgets = {
             'type_of_cuisine': forms.RadioSelect,
             'dietary_categories': forms.RadioSelect,
         }
-        
+
 
 class RecipeCommentForm(forms.ModelForm):
     """

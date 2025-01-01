@@ -4,7 +4,7 @@ from .models import About
 from .forms import FeedbackForm
 
 
-def about_us(request):
+def about(request):
     if request.method == "POST":
         feedback_form = FeedbackForm(data=request.POST)
         if feedback_form.is_valid():
@@ -14,7 +14,7 @@ def about_us(request):
     """
     Renders the About page
     """
-    about = About.objects.all().order_by('-updated_on').first()
+    about = About.objects.all().first()
     feedback_form = FeedbackForm()
 
     return render(
