@@ -16,6 +16,10 @@ body {
     justify-content: center;
 }
 
+.logo-img {
+    size: 100%;
+}
+
 .brand {
     font-family: "League Gothic", serif;
     font-size: 1.4rem;
