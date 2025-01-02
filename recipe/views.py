@@ -24,6 +24,7 @@ class RecipePostList(generic.ListView):
     :template:`recipe/recipe.html`
     """
     queryset = RecipePost.objects.filter(status=1)
+    print('queryset:', queryset)
     template_name = "recipe/recipe.html"
     paginate_by = 3
 
