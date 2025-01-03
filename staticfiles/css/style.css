@@ -48,6 +48,43 @@ body {
     color: #4A4A4F;
 }
 
+/* Grid layout for features - Benefits of Zero Waste Cooking */
+.grid {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 40vh;
+}
+
+.feature-card-title {
+    color: #fff;
+}
+
+.feature-card-text {
+    color: #C7DEAA;
+}
+
+/* Scroll Animations */
+.scroll-animation-left {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.scroll-animation-right {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
 .red-o {
     color: #E84610;
 }
