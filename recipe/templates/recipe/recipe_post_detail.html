@@ -30,9 +30,10 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <article class="card-text">
-                    {{ recipe_post.ingredients | safe }}
                     {{ recipe_post.type_of_cuisine | safe }}
                     {{ recipe_post.dietary_categories | safe }}
+                    {{ recipe_post.ingredients | safe }}
+                    {{ recipe_post.instructions | safe }}
                 </article>
             </div>
         </div>
