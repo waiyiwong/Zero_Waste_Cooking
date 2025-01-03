@@ -3,17 +3,21 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<section class="about dark-bg">
 <div class="container">
     <div class="row">
         <div class="col-10 col-md-8 mx-auto">
-            <h2 class="gradient">{{ about.title }}</h2>
+            <br>
+            <h1 class="gradient">{{ about.title }}</h1>
             {{ about.content | safe }}
+            <br>
         </div>
     </div>
+</section>
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-6 my-5">
-            <h2 class="gradient">We would love to hear your feedbacks!</h2>
+            <h1 class="gradient">We would love to hear your feedbacks!</h1>
             <p>Fill out the feedback form below</p>
             <!-- add your form here. Your submit button should have the classes of btn, btn-secondary -->
             <form method="post">
