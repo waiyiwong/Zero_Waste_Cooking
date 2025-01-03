@@ -6,16 +6,15 @@
 <div class="container">
     <div class="row">
         <div class="col-10 col-md-8 mx-auto">
-            <h2>{{ about.title }}</h2>
+            <h2 class="gradient">{{ about.title }}</h2>
             {{ about.content | safe }}
         </div>
     </div>
 
     <div class="row justify-content-center">
         <div class="col-12 col-md-6 my-5">
-            <h2>We would love to hear your feedbacks!</h2>
-            <p>I'm excited to hear from you. Fill out the form
-                and we can keep our service improving!</p>
+            <h2 class="gradient">We would love to hear your feedbacks!</h2>
+            <p>Fill out the feedback form below</p>
             <!-- add your form here. Your submit button should have the classes of btn, btn-secondary -->
             <form method="post">
                 {{ feedback_form | crispy }}
