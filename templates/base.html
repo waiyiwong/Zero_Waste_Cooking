@@ -69,11 +69,13 @@
                     </li>
                     {% endif %}
                 </ul>
-        {% if user.is_authenticated %}
-        <p class="text-end m-3">Welcome {{ user }}</p>
-        {% else %}
-        <p class="text-end m-3"> </p>
-        {% endif %}  
+                <span>
+                    {% if user.is_authenticated %}
+                    <p class="text-end m-3"> Welcome {{ user }}</p>
+                    {% else %}
+                    <p class="text-end m-3"> </p>
+                    {% endif %}
+                </span>
             </div>
         </div> 
     </nav>
