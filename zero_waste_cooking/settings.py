@@ -158,11 +158,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Enforce HTTPS connections
-SECURE_SSL_REDIRECT = True
-
-# HSTS settings
-SECURE_HSTS_SECONDS = 31536000  # 1 year in seconds
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains
-SECURE_HSTS_PRELOAD = True  # Opt into browser preload list
