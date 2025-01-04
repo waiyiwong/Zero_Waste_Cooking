@@ -195,7 +195,7 @@ for auditing the website
 <details open>
 <summary>Google Lighthouse Performance Score</summary>  
 
-![Google Lighthouse Performance.png](documentation/light_house_score.png)
+![Google Lighthouse Performance.png](static/images/lighthouse_performance.png)
 </details>   
 
 ### HTML Validation
