@@ -251,7 +251,7 @@ This project is deployed on Heroku. Here are the steps to deploy:
 5. In the "Settings" tab, add the following config vars:
    - SECRET_KEY: My Django secret key
    - DATABASE_URL: My PostgreSQL database URL
-   - CLOUDINARY_URL
+   - CLOUDINARY_URL: My Cloudinary URL
 6. Add the Python buildpack to your app.
 7. In the "Deploy" tab, click "Deploy Branch" to deploy my app.
 
