@@ -1,6 +1,6 @@
 # Zero Waste Cooking
 
-<img src="static/images/zwc_logo_white.jpg" alt="Zero Waste Cooking Logo" style="border-radius: 18%; width: 150px; height: auto;">
+<img src="static/images/zwc_logo.jpg" alt="Zero Waste Cooking Logo" style="border-radius: 18%; width: 150px; height: auto;">
 
 
 Welcome to the Zero Waste Cooking project! This Django-based web application aims to promote sustainable cooking practices by helping users discover recipes based on ingredients they already have, reducing food waste and promoting a more environmentally friendly approach to cooking.

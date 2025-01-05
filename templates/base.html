@@ -44,7 +44,7 @@
             <!-- Collapsible Navbar -->
             <div class="collapse navbar-collapse" id="navbarText">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'images/zwc_logo.png' %}" alt="Zero Waste Cooking Logo" class="logo-img">
+                    <img src="{% static 'images/zwc_logo.jpg' %}" alt="Zero Waste Cooking Logo" class="logo-img">
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -99,6 +99,17 @@
             </div>
         </div>
     </div>
+
+    <!-- JS to close alert message after 2 seconds from Bootstrap's JS: https://getbootstrap.com/docs/5.0/components/alerts/ -->
+    {% block extra_js %}
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2000);
+    </script>
+    {% endblock %}
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
