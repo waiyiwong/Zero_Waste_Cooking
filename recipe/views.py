@@ -153,7 +153,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         if not form.instance.slug:
             form.instance.slug = slugify(form.instance.title)
-            messages.success(self.request, "Your recipe post has been submitted and is awaiting review before being published.")
+            messages.success(self.request, "Thank you for submitting your recipe! It is currently under review and will be published once approved.")
             return super(AddRecipe, self).form_valid(form)
 
 

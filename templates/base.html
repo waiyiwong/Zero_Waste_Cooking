@@ -1,12 +1,5 @@
 {% load static %}
 
-{% url 'home' as home_url %}
-{% url 'about' as about_url %}
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +8,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Zero Waste Cooking is a platform dedicated to sustainable and eco-friendly cooking. Discover creative ways to reduce food waste with delicious recipes, tips, and resources for mindful cooking. Join us in making the most of your ingredients while supporting a greener planet.">  
-    <meta name="keywords" content="zero waste, sustainable cooking, eco-friendly recipes, food waste reduction, mindful cooking, green living, sustainable lifestyle, eco-conscious cooking, leftover recipes, sustainable food practices">  
+    <meta name="description"
+        content="Zero Waste Cooking is a platform dedicated to sustainable and eco-friendly cooking. Discover creative ways to reduce food waste with delicious recipes, tips, and resources for mindful cooking. Join us in making the most of your ingredients while supporting a greener planet.">
+    <meta name="keywords"
+        content="zero waste, sustainable cooking, eco-friendly recipes, food waste reduction, mindful cooking, green living, sustainable lifestyle, eco-conscious cooking, leftover recipes, sustainable food practices">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -53,24 +48,30 @@
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{% url 'home' %}">BLOG</a>
+                        <a class="nav-link {% if request.path == blog_url %}active{% endif %}"
+                            href="{% url 'home' %}">BLOG</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == recipe_url %}active{% endif %}" href="{% url 'recipe' %}">RECIPES</a>
+                        <a class="nav-link {% if request.path == recipe_url %}active{% endif %}"
+                            href="{% url 'recipe' %}">RECIPES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">ABOUT</a>
+                        <a class="nav-link {% if request.path == about_url %}active{% endif %}"
+                            href="{% url 'about' %}">ABOUT</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">LOGOUT</a>
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                            href="{% url 'account_logout' %}">LOGOUT</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'account_login' %}">LOGIN</a>
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                            href="{% url 'account_login' %}">LOGIN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" href="{% url 'account_signup' %}">SIGN UP</a>
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                            href="{% url 'account_signup' %}">SIGN UP</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -82,21 +83,13 @@
                     {% endif %}
                 </span>
             </div>
-        </div> 
+        </div>
     </nav>
-
-    <main class="flex-shrink-0 main-bg"> 
-
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-
-    </main>
 
     <!-- displaying Django messages -->
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="alert-success text-center">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
                     {{ message | safe }}
@@ -107,10 +100,16 @@
         </div>
     </div>
 
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
+
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         {% block copyright %}
-            <p class="m-0 text-center text-light"> Copyright 2025 Wai Wong </p>
+        <p class="m-0 text-center text-light"> Copyright 2025 Wai Wong </p>
         {% endblock copyright %}
         <p class="m-0 text-center text-light">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
@@ -121,7 +120,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
+    </script>
     {% block extras %}
     {% endblock %}
 </body>
