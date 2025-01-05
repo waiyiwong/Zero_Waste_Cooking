@@ -35,15 +35,6 @@
                     {{ recipe_post.ingredients | safe }}
                     {{ recipe_post.instructions | safe }}
                 </article>
-<!--edit or delete recipe by post author-->
-{% if request.user == recipe_post.author %}
-<div class="text-center">
-    <a href="{% url 'edit_recipe' recipe.slug %}" class="btn btn-success w-25">Edit</a>
-    <a href="{% url 'delete_recipe' recipe.slug %}" class="btn btn-success w-25">Delete</a>
-</div>
-{% else %}
-<p>You are not the owner of this recipe.</p>
-{% endif %}
             </div>
         </div>
     </div>
