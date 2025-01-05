@@ -6,6 +6,8 @@ from .forms import RecipeCommentForm, RecipePostForm
 from .models import RecipePost, RecipeComment
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views.generic import CreateView, UpdateView, DeleteView
+from django.utils.text import slugify
+from django.contrib import messages
 
 # Create your views here.
 
@@ -148,8 +150,11 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     success_url = "/recipe/"
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(AddRecipe, self).form_valid(form)
+        form.instance.author = self.request.user
+        if not form.instance.slug:
+            form.instance.slug = slugify(form.instance.title)
+            messages.success(self.request, "Your recipe post has been submitted and is awaiting review before being published.")
+            return super(AddRecipe, self).form_valid(form)
 
 
 class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

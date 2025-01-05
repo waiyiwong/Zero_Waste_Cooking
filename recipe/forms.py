@@ -5,9 +5,9 @@ from .models import RecipePost, RecipeComment
 class RecipePostForm(forms.ModelForm):
     class Meta:
         model = RecipePost
-        fields = ['title', 'slug', 'author', 'featured_image',
+        fields = ['title', 'featured_image',
                   'ingredients', 'instructions', 'type_of_cuisine',
-                  'dietary_categories', 'status']
+                  'dietary_categories']
         widgets = {
             'type_of_cuisine': forms.RadioSelect,
             'dietary_categories': forms.RadioSelect,
