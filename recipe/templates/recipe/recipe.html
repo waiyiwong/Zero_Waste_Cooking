@@ -1,60 +1,80 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
 
+{% block content %}
 <div class="container-fluid">
     <div class="row">
         <h3 class="gradient">Zero Waste Recipes</h3>
-        <!-- Recipe Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for recipe_post in recipepost_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if recipe_post.featured_image and recipe_post.featured_image.url %}
-                                    <img class="card-img-top" src="{{ recipe_post.featured_image.url }}" alt="{{ recipe_post.title }}">
-                                {% else %}
-                                    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ recipe_post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'recipe_post_detail' recipe_post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ recipe_post.title }}</h2>
-                                <p class="card-text">{{ recipe_post.type_of_cuisine }}</p>
-                                <p class="card-text">{{ recipe_post.dietary_categories }}</p>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">{{ recipe_post.created_on }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
+        <!--Add Recipe-->
+        <div class="container">
+            {% if request.user.is_authenticated %}
+            <div class="text-center">
+                <a href="{% url 'add_recipe' %}" class="btn btn-success w-25">Add Recipe
+                    <br>
+                    Click here to share your recipe with others
+                </a>
             </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
+            {% else %}
+            <div class="text-center">
+                <p>Want to share your recipe? Please <a href="{% url 'account_login' %}">login</a> or <a
+                        href="{% url 'account_signup' %}">register</a> to add your recipe.</p>
             </div>
+            {% endif %}
         </div>
     </div>
+</div>
 
-    <!-- Pagination -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+<!-- Recipe Entries Column -->
+<div class="col-12 mt-3 left">
+    <div class="row">
+        {% for recipe_post in recipepost_list %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if recipe_post.featured_image and recipe_post.featured_image.url %}
+                        <img class="card-img-top" src="{{ recipe_post.featured_image.url }}"
+                            alt="{{ recipe_post.title }}">
+                        {% else %}
+                        <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                        {% endif %}
+                        <div class="image-flash">
+                            <p class="author">Author: {{ recipe_post.author }}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'recipe_post_detail' recipe_post.slug %}" class="post-link">
+                        <h2 class="card-title">{{ recipe_post.title }}</h2>
+                        <p class="card-text">{{ recipe_post.type_of_cuisine }}</p>
+                        <p class="card-text">{{ recipe_post.dietary_categories }}</p>
+                    </a>
+
+                    <hr />
+                    <p class="card-text text-muted h6">{{ recipe_post.created_on }}</p>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+<!-- Pagination -->
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 </div>
 
 {% endblock %}

@@ -12,6 +12,7 @@ Welcome to the Zero Waste Cooking project! This Django-based web application aim
 ## Contents
 
 - [About the Site](#about-the-site)
+- [Agile Methodology - Project Management](#agile-methodology)
 - [User Experience (UX)](#user-experience-ux)
 - [Scope/ Features](#features)
 - [Page Features](#page-features)
@@ -49,6 +50,36 @@ Our target audience includes:
 - Home cooks of all skill levels seeking inspiration for meal preparations using available ingredients
 - People interested in sharing their own zero-waste recipes and cooking tips
 - Environmentally conscious individuals looking to reduce food waste
+
+## Agile Methodology
+The Zero Waste Cooking project was managed using Agile methodologies to ensure a user-centered, iterative, and organised development process. I used a Kanban board on GitHub to track user stories and progress through four stages: "Backlog", "To Do", "In Progress", and "Done".
+Each user story was categorised using the MoSCoW prioritization method and labeled accordingly as "Must Have", "Should Have", "Could Have", or "Won't Have". Stories were documented with clear Descriptions and Acceptance Criteria to define completion standards.
+Workflow Breakdown
+1.	Backlog: All user stories were initially added here with labels indicating their MoSCoW prioritisation. For example:
+o	Story #1: Search for recipes by ingredients
+Description: As a user, I want to search for recipes based on ingredients I have available, so that I can use up what I have and avoid food waste.
+Acceptance Criteria (AC):
+ - AC 1: The search bar should allow users to enter multiple ingredients.
+ - AC 2: The search results should be filtered by the ingredients entered.
+ - AC 3: The search results should be sorted by relevance.
+2.	To Do: Stories labeled as Could Have that were planned for development next.
+3.	In Progress: Active tasks focused on meeting the MVP requirements. This column included all Must Have and Should Have stories currently being worked on.
+4.	Done: Once all AC were met, stories were moved here.
+
+The following table summarises the user stories, their prioritisation, and their associated sprints:
+| #  | User Story                                | MoSCoW Prioritization | Sprint Number |
+|----|--------------------------------------|------------------------|---------------|
+| 1  | Search for recipes by ingredients    | Could Have            | Sprint 2      |
+| 2  | Show the main purpose of the site    | Must Have             | Sprint 1      |
+| 3  | Sign up as a member                  | Must Have             | Sprint 1      |
+| 4  | Share recipes with the community     | Could Have            | Sprint 2      |
+| 5  | Save favorite recipes                | Could Have            | Sprint 2      |
+| 6  | Comment on recipes and engage        | Must Have             | Sprint 3      |
+| 7  | Sign in as members                   | Must Have             | Sprint 1      |
+| 8  | Scan food barcode to log ingredients | Won't Have            | N/A           |
+| 9  | Show nutrition value and calories    | Won't Have            | N/A           |
+| 10 | See recipes posted by the admin      | Must Have             | Sprint 1      |
+| 11 | Sign-in to see personal profile page | Could Have            | Sprint 3      |
 
 ## User Experience (UX)
 

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Edit Recipe{% endblock %} 
+
+{% block content %}
+<div class="container">
+    <form method="POST" enctype="multipart/form-data" class="p-2 form">
+        <h1 class="text-center">Edit Recipe</h1>
+        {% csrf_token %}
+        {{ form.media }} 
+        {{ form|crispy }}
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Edit Recipe</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -2,8 +2,10 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .forms import RecipeCommentForm
+from .forms import RecipeCommentForm, RecipePostForm
 from .models import RecipePost, RecipeComment
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 # Create your views here.
 
@@ -135,3 +137,36 @@ def recipe_comment_delete(request, slug, comment_id):
                              'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('recipe_post_detail', args=[slug]))
+
+
+class AddRecipe(LoginRequiredMixin, CreateView):
+    """Add recipe view"""
+
+    template_name = "recipe/add_recipe.html"
+    model = RecipePost
+    form_class = RecipePostForm
+    success_url = "/recipe/"
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(AddRecipe, self).form_valid(form)
+
+
+class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """Edit a recipe"""
+    template_name = 'recipe/edit_recipe.html'
+    model = RecipePost
+    form_class = RecipePostForm
+    success_url = '/recipe/'
+    
+    def test_func(self):
+        return self.request.user == self.get_object().user
+
+
+class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """Delete a recipe"""
+    model = RecipePost
+    success_url = '/recipe/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
