@@ -11,7 +11,7 @@ from .views import (
 
 
 urlpatterns = [
-    path('', RecipePostList.as_view(), name='recipe'),  # Removed views.
+    path('', RecipePostList.as_view(), name='recipe'),
     path("add/", AddRecipe.as_view(), name="add_recipe"),
     path("delete/<slug:pk>/", DeleteRecipe.as_view(), name="delete_recipe"),
     path("edit/<slug:pk>/", EditRecipe.as_view(), name="edit_recipe"),
