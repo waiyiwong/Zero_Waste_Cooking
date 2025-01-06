@@ -53,29 +53,30 @@ Our target audience includes:
 - Environmentally conscious individuals looking to reduce food waste
 
 ## Agile Methodology
-The Zero Waste Cooking project was managed using Agile methodologies to ensure a user-centered, iterative, and organised development process. I used a Kanban board on GitHub to track user stories and progress through four stages: "Backlog", "To Do", "In Progress", and "Done".
+The Zero Waste Cooking project was managed using Agile methodologies to ensure a user-centered, iterative, and organised development process. I used a [Kanban board on GitHub](https://github.com/users/waiyiwong/projects/3/views/1) to track user stories and progress through four stages: "Backlog", "To Do", "In Progress", and "Done".
 Each user story was categorised using the MoSCoW prioritization method and labeled accordingly as "Must Have", "Should Have", "Could Have", or "Won't Have". Stories were documented with clear Descriptions and Acceptance Criteria to define completion standards.
 Workflow Breakdown
 1.	Backlog: All user stories were initially added here with labels indicating their MoSCoW prioritisation. For example:
 o	Story #1: Search for recipes by ingredients
-Description: As a user, I want to search for recipes based on ingredients I have available, so that I can use up what I have and avoid food waste.
-Acceptance Criteria (AC):
- - AC 1: The search bar should allow users to enter multiple ingredients.
- - AC 2: The search results should be filtered by the ingredients entered.
- - AC 3: The search results should be sorted by relevance.
+Description: 
+As a user, I want to search for recipes based on ingredients I have available, so that I can use up what I have and avoid food waste.
+Acceptance criteria (AC)
+AC 1: The search bar should allow users to enter ingredient.
+AC 2: The search results should be filtered by the ingredient entered.
+AC 3: If no recipes match the entered ingredient, display a message indicating that no results were found.
 2.	To Do: Stories labeled as Could Have that were planned for development next.
 3.	In Progress: Active tasks focused on meeting the MVP requirements. This column included all Must Have and Should Have stories currently being worked on.
 4.	Done: Once all AC were met, stories were moved here.
 
 The following table summarises the user stories, their prioritisation, and their associated sprints:
-| #  | User Story                                | MoSCoW Prioritization | Sprint Number |
+| #  | Title of User Story                                | MoSCoW Prioritization | Sprint Number |
 |----|--------------------------------------|------------------------|---------------|
-| 1  | Search for recipes by ingredients    | Could Have            | Sprint 2      |
+| 1  | Search for recipes by ingredients    | Should Have            | Sprint 2      |
 | 2  | Show the main purpose of the site    | Must Have             | Sprint 1      |
 | 3  | Sign up as a member                  | Must Have             | Sprint 1      |
-| 4  | Share recipes with the community     | Could Have            | Sprint 2      |
-| 5  | Save favorite recipes                | Could Have            | Sprint 2      |
-| 6  | Comment on recipes and engage        | Must Have             | Sprint 3      |
+| 4  | Share recipes with the community     | Should Have            | Sprint 2      |
+| 5  | Save favorite recipes                | Could Have            | Sprint 3      |
+| 6  | Comment on recipes and engage        | Must Have             | Sprint 1      |
 | 7  | Sign in as members                   | Must Have             | Sprint 1      |
 | 8  | Scan food barcode to log ingredients | Won't Have            | N/A           |
 | 9  | Show nutrition value and calories    | Won't Have            | N/A           |
@@ -101,7 +102,6 @@ The following table summarises the user stories, their prioritisation, and their
 ## Scope / Key Features
 
 - Ingredient-based recipe search
-- Rich text editor for blog & recipe posts
 - Image upload for blog & recipe posts
 - User authentication (register, login, logout)
 - Registered users reate, read, update, and delete comment on recipes
@@ -305,6 +305,11 @@ This project is deployed on Heroku. Here are the steps to deploy:
 ### AI Assistance
 - V1
 - ChatGPT
+
+### Projects for Inspiration
+I have drawn some inspiration from these projects
+https://github.com/Dee-McG/Recipe-Tutorial
+https://github.com/amylour/FreeFido_v2
 
 ### Acknowledgements
 
