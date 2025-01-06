@@ -14,9 +14,12 @@ Welcome to the Zero Waste Cooking project! This Django-based web application aim
 
 - [About the Site](#about-the-site)
 - [Agile Methodology - Project Management](#agile-methodology)
+  * [Workflow Breakdown](#workflow-breakdown)
+  * [All User Stories](#all-user-stories)
 - [User Experience (UX)](#user-experience-ux)
-- [Scope/ Features](#features)
-- [Page Features](#page-features)
+  * [Five Planes of UX](#five-planes-of-ux)
+  * [Scope/ Features](#features)
+  * [Page Features](#page-features)
   * [Landing Page with Navbar](#landing-page-with-navbar)
   * [Tagline](#tagline)
   * [Blog Post Page](#blog-post-page)
@@ -54,22 +57,26 @@ Our target audience includes:
 
 ## Agile Methodology
 The Zero Waste Cooking project was managed using Agile methodologies to ensure a user-centered, iterative, and organised development process. I used a [Kanban board on GitHub](https://github.com/users/waiyiwong/projects/3/views/1) to track user stories and progress through four stages: "Backlog", "To Do", "In Progress", and "Done".
-Each user story was categorised using the MoSCoW prioritization method and labeled accordingly as "Must Have", "Should Have", "Could Have", or "Won't Have". Stories were documented with clear Descriptions and Acceptance Criteria to define completion standards.
-Workflow Breakdown
-1.	Backlog: All user stories were initially added here with labels indicating their MoSCoW prioritisation. For example:
-o	Story #1: Search for recipes by ingredients
-Description: 
-As a user, I want to search for recipes based on ingredients I have available, so that I can use up what I have and avoid food waste.
-Acceptance criteria (AC)
-AC 1: The search bar should allow users to enter ingredient.
-AC 2: The search results should be filtered by the ingredient entered.
+Each user story was categorised using the MoSCoW prioritisation method and labeled accordingly as "Must Have", "Should Have", "Could Have", or "Won't Have". Stories were documented with clear Descriptions and Acceptance Criteria(AC) to define completion standards.
+
+### Workflow Breakdown
+1.	Backlog: All user stories were initially added here with labels indicating their MoSCoW prioritisation. 
+> For example:<br>
+> User Story #1: Search for recipes by ingredients
+
+>Description: <br>As a user, I want to search for recipes based on ingredients I have available, so that I can use up what I have and avoid food waste.
+
+>Acceptance criteria (AC)<br>
+AC 1: The search bar should allow users to enter ingredient.<br>
+AC 2: The search results should be filtered by the ingredient entered.<br>
 AC 3: If no recipes match the entered ingredient, display a message indicating that no results were found.
-2.	To Do: Stories labeled as Could Have that were planned for development next.
-3.	In Progress: Active tasks focused on meeting the MVP requirements. This column included all Must Have and Should Have stories currently being worked on.
-4.	Done: Once all AC were met, stories were moved here.
+
+2.	To Do: "Must Have" stories were prioritised first, followed by "Should Have" and "Could Have," while "Won't Have" items were excluded from the "to-do" list. Development began with "Must Have" stories, with "Should Have" planned for the second sprint and "Could Have" reserved for the third iteration.
+3.	In Progress: Active tasks focused on meeting the MVP requirements. This column included all "Must Have" and "Should Have" stories currently being worked on.
+4.	Done: User stories were moved to this column once all acceptance criteria were successfully met and tested.
 
 The following table summarises the user stories, their prioritisation, and their associated sprints:
-| #  | Title of User Story                                | MoSCoW Prioritization | Sprint Number |
+| #  | Title of User Story                                | MoSCoW Prioritisation | Sprint Number |
 |----|--------------------------------------|------------------------|---------------|
 | 1  | Search for recipes by ingredients    | Should Have            | Sprint 2      |
 | 2  | Show the main purpose of the site    | Must Have             | Sprint 1      |
@@ -80,14 +87,12 @@ The following table summarises the user stories, their prioritisation, and their
 | 7  | Sign in as members                   | Must Have             | Sprint 1      |
 | 8  | Scan food barcode to log ingredients | Won't Have            | N/A           |
 | 9  | Show nutrition value and calories    | Won't Have            | N/A           |
-| 10 | See recipes posted by the admin      | Must Have             | Sprint 1      |
+| 10 | See blog posts and recipes posted by the admin      | Must Have             | Sprint 1      |
 | 11 | Sign-in to see personal profile page | Could Have            | Sprint 3      |
 
-## User Experience (UX)
+### All User Stories
 
-### User Stories
-
-- (MVP) As a first-time visitor, I want to easily understand the main purpose of the site and learn more about zero-waste cooking, so that I can decide whether to use it or not.
+- (MVP) Show the main purpose of the site: As a first-time visitor, I want to easily understand the main purpose of the site and learn more about zero-waste cooking, so that I can decide whether to use it or not.
 - (MVP) See recipes and blog posts: As a user, I want to be able to see recipes and blog posts, so that I can learn more about zero-waste recipes and cooking techniques.
 - (MVP) Sign up as a member to comment: As a user, I want to sign up as a member, so that I can comment on recipes and posts.
 - (MVP) Sign in to post, edit, and delete posts and comments: As a logged-in user, I want to be able to post, edit, and delete posts and comments.
@@ -99,37 +104,88 @@ The following table summarises the user stories, their prioritisation, and their
 - Scan food barcode to log ingredients: As a user, I want to be able to scan the barcode of a food item, so that I can easily log its ingredients.
 - Show nutrition value and calculate calories: As a user, I want to be able to see the nutrition value of a food item and calculate its calories, so that I can make informed choices about what I eat.
 
-## Scope / Key Features
+## User Experience (UX)
 
-- Ingredient-based recipe search
-- Image upload for blog & recipe posts
-- User authentication (register, login, logout)
-- Registered users reate, read, update, and delete comment on recipes
-- Responsive design for various devices
+### **Five Planes of UX**
+### 1. Strategy Plane
 
-## Page Features
+#### 1.1 Goal:
+Help users reduce food waste by finding recipes based on available ingredients.
 
-### Landing Page with Navbar
+#### 1.2 User Needs:
+- Reduce food waste by finding recipes with available ingredients.
+- Access sustainable cooking tips and recipes.
+- Engage with other users through comments and sharing.
+- Learn about zero-waste cooking practices.
+
+#### 1.3 Business Goals:
+- Encourage sustainability in the kitchen.
+- Increase user engagement with community recipes and tips.
+- Promote a lifestyle change that benefits both users and the environment.
+
+---
+
+### 2. Scope Plane
+
+#### 2.1 Key Existing Features
+
+1. **Responsive Navigation Bar**: Allows users to easily navigate the site on all devices.
+2. **User Authentication**: Enables users to register, log in, and log out.
+3. **Recipe Search**: Allows users to search for recipes based on available ingredients.
+4. **Dietary Preference Search**: filters dietary restrictions and cuisine type
+5. **Recipe Details Page**: Displays full recipe information, including ingredients, instructions, and user comments.
+6. **Commenting System**: Allows users to engage with recipes by leaving comments.
+7. **Responsive Design**: Ensures the site is fully functional and visually appealing on all device sizes.
+
+#### 2.2 Out of Scope:
+- Barcode scanning for ingredient logging.
+- Nutrition value and calorie calculation.
+- Recipe rating system
+- Like and add-to-favourite buttons
+- User Profile page
+- Social media sharing integration
+- User Recipe Management (edit and delete)
+
+---
+
+### 3. Structure Plane
+**Website Structure:**
+#### 3.1 Landing Page with Navbar:
 The landing page features a hero image that visually communicates the purpose of the site — promoting zero waste cooking. It highlights the benefits of sustainable cooking practices, offering users an introduction to the core values of zero waste cooking.
 
-### Tagline
-"Cook Hero, Waste Hero" — A tagline that encapsulates the spirit of sustainable and mindful cooking, encouraging users to become heroes in their kitchens by reducing waste.
+#### 3.2 Tagline:
+"Cook Hero, Waste Hero" — A tagline that encapsulates the spirit of sustainable and mindful cooking, encouraging users to become heroes in their kitchens and for our planet by reducing waste.
 
-### Blog Post Page
-  This page shares zero waste cooking tips, practical advice on reducing food waste, and insights into sustainable practices. It serves as an educational hub for visitors seeking to improve their cooking habits.
+#### 3.3 Blog Post Page:
+This page shares zero waste cooking tips, practical advice on reducing food waste, and insights into sustainable practices. It serves as an educational hub for visitors seeking to improve their cooking habits.
 
-### Recipe Page
-  The recipe page features zero waste cooking recipes, detailed instructions, and options for dietary preferences. The goal is to provide easy-to-follow, eco-conscious recipes that help users reduce waste in the kitchen.
+#### 3.4 Recipe Page:
+The recipe page features zero waste cooking recipes, detailed instructions, and options for dietary preferences. The goal is to provide easy-to-follow, eco-conscious recipes that help users reduce waste in the kitchen.
 
-### About Page
-  Learn about the origins of the Zero Waste Cooking website, the motivations behind creating this platform, and the community it seeks to build. The page includes a call to join the zero waste community and a contact form with validation to ensure user inquiries are received and addressed.
+#### 3.5 About Page:
+Learn about the origins of the Zero Waste Cooking website, the motivations behind creating this platform, and the community it seeks to build. The page includes a call to join the zero waste community and a contact form with validation to ensure user inquiries are received and addressed.
 
-### Footer
+#### 3.6 Footer:
 The footer includes essential copyright information and social media links for users to stay connected and engage with the Zero Waste Cooking community online.
 
-## Desktop, Tablet & Mobile View
+#### 3.7 Navigation:
+Simple top navbar with links to landing page, recipes, blog, about page, and user login/sign up.
+
+---
+
+### 4. Skeleton Plane
+
+#### 4.1 Layout Design:
+- **Hero Section**: Hero image with Tagline “Cook Hero, Waste Hero” and a short persuasive message to call for action.
+- **Responsive Grid**: Adaptable grid ensuring readability and usability across all devices.
+- **Navbar**: Collapsible menu for mobile devices, with clear navigation.
+- **Recipe List**: Cards displaying recipe titles, pictures, type of cuisines, and dietary preferences.
+- **Blog**: Engaging posts with images and text on sustainable cooking.
+- **Commenting System**: Simple interface for users to engage with recipes and blog posts.
+
+#### 4.2 Desktop, Tablet & Mobile View
 ![Desktop, Tablet & Mobile View](static/images/responsive.png)
-### **Desktop, Tablet & Mobile Differences**  
+#### **Desktop, Tablet & Mobile Differences**  
 Bootstrap 5.3.3 was implemented to ensure full responsiveness across all devices. Key features include:
 
 - Fluid containers and a responsive grid system that adapt to screen sizes.
@@ -138,7 +194,11 @@ Bootstrap 5.3.3 was implemented to ensure full responsiveness across all devices
 
 This approach provides an optimal viewing experience, maintaining readability and usability with minimal resizing and scrolling across all devices.
 
-## Design
+---
+
+### 5. Surface Plane
+
+**Design Elements:**
 
 ### Wireframes
 
@@ -173,26 +233,6 @@ The site uses a clean, modern "League Gothic", serif fonts for easy readability 
 
 I used AI image generation (via Freepik) to create the majority of the images on the site. These AI-generated images served as the foundation for redesigning and customizing the logo, hero image, and post images. The final designs were refined by myself using Adobe Fresco and Canva. 
 The recipe imagery throughout the site is focused on fresh ingredients, completed dishes, and sustainable cooking practices.
-
-## Features
-
-### Existing Features
-
-1. **Responsive Navigation Bar**: Allows users to easily navigate the site on all devices.
-2. **User Authentication**: Enables users to register, log in, and log out.
-3. **Recipe Search**: Allows users to search for recipes based on available ingredients.
-4. **Dietary Preference Search**: filters dietary restrictions and cuisine type
-5. **Recipe Details Page**: Displays full recipe information, including ingredients, instructions, and user comments.
-6. **Commenting System**: Allows users to engage with recipes by leaving comments.
-7. **Responsive Design**: Ensures the site is fully functional and visually appealing on all device sizes.
-
-### Features Left to Implement
-
-- Recipe rating system
-- Like and add-to-favourite buttons
-- User Profile page
-- Social media sharing integration
-- User Recipe Creation and Management
 
 ## Technologies Used
 
