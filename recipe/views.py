@@ -8,30 +8,33 @@ from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.utils.text import slugify
 from django.contrib import messages
-
+from django.db.models import Q
 # Create your views here.
 
 
 class RecipePostList(generic.ListView):
     """
-    Returns all published recipe_posts in :model:`recipe.Post`
-    and displays them in a page of 3 recipe_posts.
-    **Context**
-
-    ``queryset``
-        All published instances of :model:`recipe.Post`
-    ``paginate_by``
-        Number of recipe_posts per page.
-
-    **Template:**
-
-    :template:`recipe/recipe.html`
+    Returns all published recipe posts and handles search functionality.
     """
-    queryset = RecipePost.objects.filter(status=1)
-    print('queryset:', queryset)
+    model = RecipePost
     template_name = "recipe/recipe.html"
     paginate_by = 3
 
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            recipe_search = RecipePost.objects.filter(
+                Q(title__icontains=query) |
+                Q(ingredients__icontains=query) |
+                Q(type_of_cuisine__icontains=query),
+                status=1
+            )
+            if not recipe_search.exists():
+                messages.info(self.request, "No recipes found with the entered ingredients.")
+        
+        else:
+            recipe_search = RecipePost.objects.filter(status=1)
+        return recipe_search
 
 def recipe_post_detail(request, slug):
     """
@@ -175,3 +178,4 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+    
