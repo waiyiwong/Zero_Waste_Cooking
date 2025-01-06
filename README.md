@@ -10,33 +10,49 @@ Welcome to the Zero Waste Cooking project! This Django-based web application aim
 
 ![Responsive Mockup](static/images/responsive.png) 
 
-## Contents
+## Table of Contents
 
 - [About the Site](#about-the-site)
-- [Agile Methodology - Project Management](#agile-methodology)
-  * [Workflow Breakdown](#workflow-breakdown)
-  * [All User Stories](#all-user-stories)
+  - [Primary Goal](#primary-goal)
+  - [Target Users](#target-users)
+- [Agile Methodology](#agile-methodology)
+  - [Workflow Breakdown](#workflow-breakdown)
+  - [All User Stories](#all-user-stories)
 - [User Experience (UX)](#user-experience-ux)
-  * [Five Planes of UX](#five-planes-of-ux)
-  * [Scope/ Features](#features)
-  * [Page Features](#page-features)
-  * [Landing Page with Navbar](#landing-page-with-navbar)
-  * [Tagline](#tagline)
-  * [Blog Post Page](#blog-post-page)
-  * [Recipe Page](#recipe-page)
-  * [About Page](#about-page)
-  * [Footer](#footer)
-- [Desktop, Tablet & Mobile View](#desktop-tablet--mobile-view)
-  * [Desktop, Tablet & Mobile Differences](#desktop-tablet--mobile-differences)
-  * [Tablet View](#tablet-view)
-  * [Mobile View](#mobile-view)
-- [Design](#design)
-  * [Wireframes](#wireframes)
-  * [Colour Scheme](#color-scheme)
-  * [Typography](#typography)
-  * [Imagery](#imagery)
+  - [Five Planes of UX](#five-planes-of-ux)
+    - [1. Strategy Plane](#1-strategy-plane)
+      - [1.1 Goal](#11-goal)
+      - [1.2 User Needs](#12-user-needs)
+      - [1.3 Business Goals](#13-business-goals)
+    - [2. Scope Plane](#2-scope-plane)
+      - [2.1 Key Existing Features](#21-key-existing-features)
+      - [2.2 Out of Scope](#22-out-of-scope)
+    - [3. Structure Plane](#3-structure-plane)
+      - [3.1 Landing Page with Navbar](#31-landing-page-with-navbar)
+      - [3.2 Tagline](#32-tagline)
+      - [3.3 Blog Post Page](#33-blog-post-page)
+      - [3.4 Recipe Page](#34-recipe-page)
+      - [3.5 About Page](#35-about-page)
+      - [3.6 Footer](#36-footer)
+      - [3.7 Navigation](#37-navigation)
+    - [4. Skeleton Plane](#4-skeleton-plane)
+      - [4.1 Layout Design](#41-layout-design)
+      - [4.2 Desktop, Tablet & Mobile View and Differences](#42-desktop-tablet--mobile-view-and-differences)
+    - [5. Surface Plane](#5-surface-plane)
+      - [5.1 Wireframes](#51-wireframes)
+      - [5.2 Color Scheme](#52-color-scheme)
+      - [5.3 Typography](#53-typography)
+      - [5.4 Imagery](#54-imagery)
 - [Technologies Used](#technologies-used)
+  - [Languages Used](#languages-used)
+  - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
 - [Testing](#testing)
+  - [Google Lighthouse Performance](#google-lighthouse-performance)
+  - [HTML Validation](#html-validation)
+  - [CSS Validation](#css-validation)
+  - [Javascript Validation](#javascript-validation)
+  - [Python Validation](#python-validation)
+  - [Bugs & Fixes](#bugs--fixes)
 - [Deployment](#deployment)
 - [Credits](#credits)
 
@@ -183,9 +199,9 @@ Simple top navbar with links to landing page, recipes, blog, about page, and use
 - **Blog**: Engaging posts with images and text on sustainable cooking.
 - **Commenting System**: Simple interface for users to engage with recipes and blog posts.
 
-#### 4.2 Desktop, Tablet & Mobile View
+#### 4.2 Desktop, Tablet & Mobile View and Differences
 ![Desktop, Tablet & Mobile View](static/images/responsive.png)
-#### **Desktop, Tablet & Mobile Differences**  
+
 Bootstrap 5.3.3 was implemented to ensure full responsiveness across all devices. Key features include:
 
 - Fluid containers and a responsive grid system that adapt to screen sizes.
@@ -196,16 +212,14 @@ This approach provides an optimal viewing experience, maintaining readability an
 
 ---
 
-### 5. Surface Plane
+### 5. Surface Plane-- Design Elements
 
-**Design Elements:**
-
-### Wireframes
+#### 5.1 Wireframes
 
 Wireframe - Homepage Desktop & Mobile
 ![wireframe.png](static/images/wireframe.png)
 
-### Color Scheme
+#### 5.2 Color Scheme
 
 The color scheme focuses on sustainability, complemented by a natural, organic feel.
 
@@ -225,11 +239,11 @@ For Dark Background
 For Light Background
 ![color contrast on nav bar test pass)](static/images/color_contrast2.png)
 
-### Typography
+#### 5.3 Typography
 
 The site uses a clean, modern "League Gothic", serif fonts for easy readability across devices. [Google Fonts](https://fonts.google.com/) is used to import the fonts.
 
-### Imagery
+#### 5.4 Imagery
 
 I used AI image generation (via Freepik) to create the majority of the images on the site. These AI-generated images served as the foundation for redesigning and customizing the logo, hero image, and post images. The final designs were refined by myself using Adobe Fresco and Canva. 
 The recipe imagery throughout the site is focused on fresh ingredients, completed dishes, and sustainable cooking practices.
