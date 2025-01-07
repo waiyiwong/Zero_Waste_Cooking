@@ -78,13 +78,13 @@
                     </li>
                     {% endif %}
                 </ul>
-                <span>
+                <div class="ms-auto text-end ">
                     {% if user.is_authenticated %}
-                    <p class="text-end m-3"> Welcome {{ user }}</p>
+                    <p class="navbar-text"> Welcome {{ user }}   </p>
                     {% else %}
-                    <p class="text-end m-3"> </p>
+                    <p> </p>
                     {% endif %}
-                </span>
+                </div>
             </div>
         </div>
     </nav>
