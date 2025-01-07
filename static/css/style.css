@@ -23,6 +23,11 @@ body {
     text-decoration: none; 
 }
 
+.navbar .nav-link:active {
+    color: #C7DEAA !important;
+    text-decoration: underline !important; 
+}
+
 .hero-div {
     background-color: #282629;
 }
