@@ -15,6 +15,11 @@ class RecipePostViewsTestCase(TestCase):
             password="myPassword",
             email="test@test.com"
         )
+        self.user = User.objects.create_user(
+            username="regular_Username",
+            password="regular_Password",
+            email="regularuser@test.com"
+        )
         self.post = RecipePost(
             title="Test Recipe",
             slug="test-recipe",
