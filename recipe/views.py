@@ -65,7 +65,7 @@ def recipe_post_detail(request, slug):
         if recipe_comment_form.is_valid():
             recipe_comment = recipe_comment_form.save(commit=False)
             recipe_comment.author = request.user
-            recipe_comment.post = recipe_post
+            recipe_comment.recipe_post = recipe_post #from line 66 models.py
             recipe_comment.save()
             messages.add_message(
                 request, messages.SUCCESS,

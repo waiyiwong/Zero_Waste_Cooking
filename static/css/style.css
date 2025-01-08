@@ -33,9 +33,8 @@ body {
 }
 
 .hero-img {
-    max-width: 100vw;
-    max-height: 80vh;
-    margin: 0;
+    width: 100%;
+    margin: auto;
     display: flex;
     align-items: center;
     text-align: center;
