@@ -301,7 +301,16 @@ for auditing the website
 <summary>Google Lighthouse Performance Score</summary>  
 
 ![Google Lighthouse Performance.png](static/images/lighthouse_performance.png)
-</details>   
+</details>
+
+### WAVE Web Accessibility Evaluation Tools
+[WAVE Web Accessibility Evaluation Tools](https://wave.webaim.org/) is used to check the accessibility of the site
+<details open>
+<summary>WAVE Web Accessibility Evaluation Result</summary>
+
+![WAVE Web Accessibility Evaluation.png](static/images/wave.png)
+
+</details>
 
 ### HTML Validation
 [W3C HTML Validation](https://validator.w3.org/) is used to validate html codes for all pages
@@ -372,6 +381,7 @@ JS validation for comments.js
 - Failed to load cloudinary images after deploying to Heroku (- Set Config Vars and Cloudinary_URL on Heroku)
 
 ### **Unsolved Bugs**
+Nil
 
 ## Deployment
 
