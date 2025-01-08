@@ -331,7 +331,7 @@ Sign out page
 <details open>
 <summary>Python validation</summary>  
 
-![python_validation.png](documentation/python_validation.png)
+![python_validation.png](static/images/validate_python.png)
 </details>  
 
 
