@@ -25,7 +25,8 @@ Welcome to the Zero Waste Cooking project! This Django-based web application aim
     - [1.3 Business Goals](#13-business-goals)
   - [2. Scope Plane](#2-scope-plane)
     - [2.1 Key Existing Features](#21-key-existing-features)
-    - [2.2 Out of Scope](#22-out-of-scope)
+    - [2.2 CRUD Functionality for Key Features](#22-crud-functionality-for-key-features)
+    - [2.3 Out of Scope](#23-out-of-scope)
   - [3. Structure Plane](#3-structure-plane)
     - [3.1 Landing Page with Navbar](#31-landing-page-with-navbar)
     - [3.2 Tagline](#32-tagline)
@@ -152,7 +153,26 @@ Help users reduce food waste by finding recipes based on available ingredients.
 6. **Commenting System**: Allows users to engage with recipes by leaving comments.
 7. **Responsive Design**: Ensures the site is fully functional and visually appealing on all device sizes.
 
-#### 2.2 Out of Scope:
+#### 2.2 CRUD Functionality for Key Features
+2.2.1 **Admin's CRUD Functionality**
+| Feature                | Create | Read | Update | Delete |
+|------------------------|--------|------|--------|--------|
+| Recipes               | ✅     | ✅   | ✅     | ✅     |
+| Blog Posts            | ✅     | ✅   | ✅     | ✅     |
+| About                 | ✅    | ✅   | ✅     | ✅    |
+| Comments              | ✅     | ✅   | ✅     | ✅     |
+| Feedback Form        | ✅  | ✅   | ❌     | ✅     |
+
+2.2.2 **Regular User's CRUD Functionality**
+| Feature                | Create | Read | Update | Delete |
+|------------------------|--------|------|--------|--------|
+| Recipes               | ✅     | ✅   | ❌  | ❌   |
+| Blog Posts            | ❌     | ✅   | ❌     | ❌  
+| About                | ❌     | ✅   | ❌     | ❌  |
+| Comments              | ✅     | ✅   | ✅     | ✅     |
+| Feedback Form      | ✅  | ❌   | ❌     | ❌    |
+
+#### 2.3 Out of Scope:
 - Barcode scanning for ingredient logging.
 - Nutrition value and calorie calculation.
 - Recipe rating system
@@ -319,11 +339,22 @@ Sign out page
 </details>
 
 ### Javascript Validation
+[Jshint](https://jshint.com/) is for validating my Javascript
 
 <details open>
 <summary>JS validation</summary>  
 
-![w3c_css_validation.png](documentation/js_validation.png)
+JS validation for comments.js
+![w3c_js_validation.png](static/images/validate_comments_js.png)
+- Functions: The file contains 2 functions, each with low complexity and a maximum of 5 statements.
+- Warnings: 19 warnings related to ES6 features (const, let, arrow functions, template literals) due to missing esversion: 6 configuration.
+- Undefined Variable: bootstrap is referenced but not defined.
+
+JS validation for comments.js
+![w3c_js_validation.png](static/images/validate_script_js.png)
+- Functions: The file contains 4 functions with low complexity. The largest function has 4 statements, and the most complex function has a cyclomatic complexity of 2.
+- Warnings: 7 warnings primarily related to ES6 features (const, arrow functions) due to missing esversion: 6 configuration.
+
 </details>   
 
 ### Python Validation
