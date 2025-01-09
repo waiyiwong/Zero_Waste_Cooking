@@ -3,6 +3,7 @@ from django.urls import reverse
 from .models import About
 from .forms import FeedbackForm
 
+
 class TestAboutView(TestCase):
     def setUp(self):
         """Creates about us content"""
@@ -29,4 +30,3 @@ class TestAboutView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(
             b'Your feedback has been submitted. Thank you!', response.content)
-        

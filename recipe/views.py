@@ -66,7 +66,7 @@ def recipe_post_detail(request, slug):
         if recipe_comment_form.is_valid():
             recipe_comment = recipe_comment_form.save(commit=False)
             recipe_comment.author = request.user
-            recipe_comment.recipe_post = recipe_post  #from line 66 models.py
+            recipe_comment.recipe_post = recipe_post  # from line 66 models.py
             recipe_comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
@@ -157,7 +157,9 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         if not form.instance.slug:
             form.instance.slug = slugify(form.instance.title)
-            messages.success(self.request, "Thanks for submission! It will be published after review.")
+            messages.success(
+                self.request,
+                "Thanks for submission! It will be published after review.")
             return super(AddRecipe, self).form_valid(form)
 
 

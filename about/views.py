@@ -9,7 +9,9 @@ def about(request):
         feedback_form = FeedbackForm(data=request.POST)
         if feedback_form.is_valid():
             feedback_form.save()
-            messages.add_message(request, messages.SUCCESS, "Your feedback has been submitted. Thank you!")
+            messages.add_message(
+                request, messages.SUCCESS,
+                "Your feedback has been submitted. Thank you!")
 
     """
     Renders the About page
