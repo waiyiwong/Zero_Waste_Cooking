@@ -166,7 +166,7 @@ Help users reduce food waste by finding recipes based on available ingredients.
 2.2.2 **Regular User's CRUD Functionality**
 | Feature                | Create | Read | Update | Delete |
 |------------------------|--------|------|--------|--------|
-| Recipes               | ✅     | ✅   | ❌  | ❌   |
+| Recipes               | ✅     | ✅   | ✅  | ✅  |
 | Blog Posts            | ❌     | ✅   | ❌     | ❌  
 | About                | ❌     | ✅   | ❌     | ❌  |
 | Comments              | ✅     | ✅   | ✅     | ✅     |
@@ -179,7 +179,6 @@ Help users reduce food waste by finding recipes based on available ingredients.
 - Like and add-to-favourite buttons
 - User Profile page
 - Social media sharing integration
-- User Recipe Management (edit and delete)
 
 ---
 
@@ -379,9 +378,10 @@ JS validation for comments.js
 - Failed to render recipe app (- check all python files in recipe app and project level urls.py, seek help from Google, chatGPT and Slack community)
 - Failed to load images when debug mode switched from true to false (1. check all python files in recipe app and project level urls.py, seek help from Google, chatGPT and Slack community. 2. make sure all images file in static folder and correct directory and then run command in terminal "python3 manage.py collectstatic". )
 - Failed to load cloudinary images after deploying to Heroku (- Set Config Vars and Cloudinary_URL on Heroku)
+- Edit and delete button for comments fails to operate as normal (help from John on slack channel) spotted js script "defer" affects js normal functionality and correct naming of objects
 
 ### **Unsolved Bugs**
-Nil
+JS line 49-55 delete recipe post (replace delete model to a template page to delete)
 
 ## Deployment
 
@@ -426,5 +426,5 @@ https://github.com/amylour/FreeFido_v2
 
 ### Acknowledgements
 
-- SME (Mark), coding coach (John and Roo) and facilitators (Marko, Shelly, Vasi) for continuous helpful feedback.
+- Coding coach (JOHN and Roo), facilitators (Marko, Shelly, Vasi) and SME (Mark) for continuous helpful feedback.
 - The Code Institute Slack community for their support and advice.
