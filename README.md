@@ -48,6 +48,7 @@ Welcome to the Zero Waste Cooking project! This Django-based web application aim
   - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
 - [Testing](#testing)
   - [Google Lighthouse Performance](#google-lighthouse-performance)
+  - [WAVE Web Accessibility Evaluation](#wave-web-accessibility-evaluation-tools)
   - [HTML Validation](#html-validation)
   - [CSS Validation](#css-validation)
   - [Javascript Validation](#javascript-validation)
@@ -290,9 +291,16 @@ The recipe imagery throughout the site is focused on fresh ingredients, complete
 ## Testing
 To ensure the functionality and reliability of the site, both automated and manual testing were adopted throughout the development process. 
 
-Automated tests were implemented to check for common issues and verify the integrity of key features. 
+**Automated tests**
 
-Manual testing was performed on various devices, including the iPhone 15 Pro, Sony Xperia, iPad Pro, MacBook Air, and MacBook Pro, to assess the site's responsiveness, accessibility, and user experience across different screen sizes and platforms. This combination of automated and manual testing ensures the site’s performance and quality are maintained across a range of devices.
+A total of 14 automated tests were written and successfully passed, covering key features of the application. These tests ensured that models saved and retrieved data correctly, views returned the expected HTTP responses, and forms validated user input as intended. The automated tests were executed using the `python manage.py test` command, and the results are shown in the image below:
+![Automated test results.png](static/images/automated_tests.png)
+
+**Manual testing**
+
+Manual testing was conducted to evaluate the site’s responsiveness, accessibility, and user experience across various devices and platforms. Testing was performed on devices such as the iPhone 15 Pro, Sony Xperia, iPad Pro, MacBook Air, and MacBook Pro to ensure the layout adapted seamlessly to different screen sizes. Additionally, the site was tested across major browsers, including Google Chrome and Safari, to verify cross-browser compatibility. The testing process focused on assessing the layout’s responsiveness, adherence to accessibility standards, and overall usability. Forms and pages were also tested with incorrect inputs to ensure proper error messages were displayed. No issues were identified during manual testing, and the site performed as expected across all tested devices and platforms.
+
+This combination of automated and manual testing ensures the site’s performance and quality are maintained across a range of devices and platforms.
 
 ### Google Lighthouse performance
 for auditing the website
@@ -420,7 +428,8 @@ This project is deployed on Heroku. Here are the steps to deploy:
 - ChatGPT
 
 ### Projects for Inspiration
-I have drawn some inspiration from these projects
+I have drawn some inspiration from these projects:
+
 https://github.com/Dee-McG/Recipe-Tutorial
 https://github.com/amylour/FreeFido_v2
 
