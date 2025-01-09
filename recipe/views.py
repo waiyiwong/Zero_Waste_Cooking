@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -7,7 +7,6 @@ from .models import RecipePost, RecipeComment
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.utils.text import slugify
-from django.contrib import messages
 from django.db.models import Q
 # Create your views here.
 
@@ -30,11 +29,13 @@ class RecipePostList(generic.ListView):
                 status=1
             )
             if not recipe_search.exists():
-                messages.info(self.request, "No recipes found with the entered ingredients.")
-        
+                messages.info(self.request,
+                              "No recipes found with the entered ingredients.")
+
         else:
             recipe_search = RecipePost.objects.filter(status=1)
         return recipe_search
+
 
 def recipe_post_detail(request, slug):
     """
@@ -65,7 +66,7 @@ def recipe_post_detail(request, slug):
         if recipe_comment_form.is_valid():
             recipe_comment = recipe_comment_form.save(commit=False)
             recipe_comment.author = request.user
-            recipe_comment.recipe_post = recipe_post #from line 66 models.py
+            recipe_comment.recipe_post = recipe_post  #from line 66 models.py
             recipe_comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
@@ -156,7 +157,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         if not form.instance.slug:
             form.instance.slug = slugify(form.instance.title)
-            messages.success(self.request, "Thank you for submitting your recipe! It is currently under review and will be published once approved.")
+            messages.success(self.request, "Thanks for submission! It will be published after review.")
             return super(AddRecipe, self).form_valid(form)
 
 
@@ -166,16 +167,23 @@ class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = RecipePost
     form_class = RecipePostForm
     success_url = '/recipe/'
-    
+
     def test_func(self):
-        return self.request.user == self.get_object().user
+        return self.request.user == self.get_object().author
 
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """Delete a recipe"""
+    template_name = 'recipe/recipe_confirm_delete.html'
     model = RecipePost
+    form_class = RecipePostForm
     success_url = '/recipe/'
 
     def test_func(self):
-        return self.request.user == self.get_object().user
-    
+        return self.request.user == self.get_object().author
+
+    def post(self, request, *args, **kwargs):
+        """Handle the post request and delete the recipe."""
+        recipe_post = self.get_object()
+        recipe_post.delete()
+        return redirect('recipe')

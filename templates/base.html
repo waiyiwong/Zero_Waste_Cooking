@@ -103,14 +103,14 @@
         </div>
     </div>
 
-    <!-- JS to close alert message after 2.5 seconds from Bootstrap's JS: https://getbootstrap.com/docs/5.0/components/alerts/ -->
+    <!-- JS to close alert message after 3 seconds from Bootstrap's JS: https://getbootstrap.com/docs/5.0/components/alerts/ -->
     {% block extra_js %}
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();
-        }, 2500);
+        }, 3000);
     </script>
     {% endblock %}
 

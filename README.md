@@ -48,6 +48,7 @@ Welcome to the Zero Waste Cooking project! This Django-based web application aim
   - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
 - [Testing](#testing)
   - [Google Lighthouse Performance](#google-lighthouse-performance)
+  - [WAVE Web Accessibility Evaluation](#wave-web-accessibility-evaluation-tools)
   - [HTML Validation](#html-validation)
   - [CSS Validation](#css-validation)
   - [Javascript Validation](#javascript-validation)
@@ -157,7 +158,8 @@ Help users reduce food waste by finding recipes based on available ingredients.
 2.2.1 **Admin's CRUD Functionality**
 | Feature                | Create | Read | Update | Delete |
 |------------------------|--------|------|--------|--------|
-| Recipes               | ✅     | ✅   | ✅     | ✅     |
+| Recipe Posts           | ✅     | ✅   | ✅     | ✅     |
+| Recipe Search              | ✅     | ✅   | ✅  | ✅  |
 | Blog Posts            | ✅     | ✅   | ✅     | ✅     |
 | About                 | ✅    | ✅   | ✅     | ✅    |
 | Comments              | ✅     | ✅   | ✅     | ✅     |
@@ -166,7 +168,8 @@ Help users reduce food waste by finding recipes based on available ingredients.
 2.2.2 **Regular User's CRUD Functionality**
 | Feature                | Create | Read | Update | Delete |
 |------------------------|--------|------|--------|--------|
-| Recipes               | ✅     | ✅   | ❌  | ❌   |
+| Recipe Posts               | ✅     | ✅   | ✅  | ✅  |
+| Recipe Search              | ✅     | ✅   | ✅  | ✅  |
 | Blog Posts            | ❌     | ✅   | ❌     | ❌  
 | About                | ❌     | ✅   | ❌     | ❌  |
 | Comments              | ✅     | ✅   | ✅     | ✅     |
@@ -179,7 +182,6 @@ Help users reduce food waste by finding recipes based on available ingredients.
 - Like and add-to-favourite buttons
 - User Profile page
 - Social media sharing integration
-- User Recipe Management (edit and delete)
 
 ---
 
@@ -291,9 +293,16 @@ The recipe imagery throughout the site is focused on fresh ingredients, complete
 ## Testing
 To ensure the functionality and reliability of the site, both automated and manual testing were adopted throughout the development process. 
 
-Automated tests were implemented to check for common issues and verify the integrity of key features. 
+**Automated tests**
 
-Manual testing was performed on various devices, including the iPhone 15 Pro, Sony Xperia, iPad Pro, MacBook Air, and MacBook Pro, to assess the site's responsiveness, accessibility, and user experience across different screen sizes and platforms. This combination of automated and manual testing ensures the site’s performance and quality are maintained across a range of devices.
+A total of 14 automated tests were written and successfully passed, covering key features of the application. These tests ensured that models saved and retrieved data correctly, views returned the expected HTTP responses, and forms validated user input as intended. The automated tests were executed using the `python manage.py test` command, and the results are shown in the image below:
+![Automated test results.png](static/images/automated_tests.png)
+
+**Manual testing**
+
+Manual testing was conducted to evaluate the site’s responsiveness, accessibility, and user experience across various devices and platforms. Testing was performed on devices such as the iPhone 15 Pro, Sony Xperia, iPad Pro, MacBook Air, and MacBook Pro to ensure the layout adapted seamlessly to different screen sizes. Additionally, the site was tested across major browsers, including Google Chrome and Safari, to verify cross-browser compatibility. The testing process focused on assessing the layout’s responsiveness, adherence to accessibility standards, and overall usability. Forms and pages were also tested with incorrect inputs to ensure proper error messages were displayed. No issues were identified during manual testing, and the site performed as expected across all tested devices and platforms.
+
+This combination of automated and manual testing ensures the site’s performance and quality are maintained across a range of devices and platforms.
 
 ### Google Lighthouse performance
 for auditing the website
@@ -379,9 +388,10 @@ JS validation for comments.js
 - Failed to render recipe app (- check all python files in recipe app and project level urls.py, seek help from Google, chatGPT and Slack community)
 - Failed to load images when debug mode switched from true to false (1. check all python files in recipe app and project level urls.py, seek help from Google, chatGPT and Slack community. 2. make sure all images file in static folder and correct directory and then run command in terminal "python3 manage.py collectstatic". )
 - Failed to load cloudinary images after deploying to Heroku (- Set Config Vars and Cloudinary_URL on Heroku)
+- Edit and delete button for comments fails to operate as normal (help from John on slack channel) spotted js script "defer" affects js normal functionality and correct naming of objects
 
 ### **Unsolved Bugs**
-Nil
+JS line 49-55 delete recipe post (replace delete model to a template page to delete)
 
 ## Deployment
 
@@ -420,11 +430,12 @@ This project is deployed on Heroku. Here are the steps to deploy:
 - ChatGPT
 
 ### Projects for Inspiration
-I have drawn some inspiration from these projects
-https://github.com/Dee-McG/Recipe-Tutorial
-https://github.com/amylour/FreeFido_v2
+I have drawn some inspiration from these projects:
+
+- https://github.com/Dee-McG/Recipe-Tutorial
+- https://github.com/amylour/FreeFido_v2
 
 ### Acknowledgements
 
-- SME (Mark), coding coach (John and Roo) and facilitators (Marko, Shelly, Vasi) for continuous helpful feedback.
+- Coding coach (JOHN and Roo), facilitators (Marko, Shelly, Vasi) and SME (Mark) for continuous helpful feedback.
 - The Code Institute Slack community for their support and advice.
