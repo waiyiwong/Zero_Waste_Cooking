@@ -35,9 +35,16 @@
                     {{ recipe_post.ingredients | safe }}
                     {{ recipe_post.instructions | safe }}
                 </article>
+                <!--edit and delete recipe-->
+                {% if user.is_authenticated and recipe_post.author == user %}
+                    <a href="{% url 'delete_recipe' recipe_post.id %}" class="btn btn-edit">Delete</a>
+                    <a href="{% url 'edit_recipe' recipe_post.id %}" class="btn btn-edit">Edit</a>
+                {% endif %}
+                </div>
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
