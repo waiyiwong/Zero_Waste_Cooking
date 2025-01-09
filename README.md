@@ -158,7 +158,8 @@ Help users reduce food waste by finding recipes based on available ingredients.
 2.2.1 **Admin's CRUD Functionality**
 | Feature                | Create | Read | Update | Delete |
 |------------------------|--------|------|--------|--------|
-| Recipes               | ✅     | ✅   | ✅     | ✅     |
+| Recipe Posts           | ✅     | ✅   | ✅     | ✅     |
+| Recipe Search              | ✅     | ✅   | ✅  | ✅  |
 | Blog Posts            | ✅     | ✅   | ✅     | ✅     |
 | About                 | ✅    | ✅   | ✅     | ✅    |
 | Comments              | ✅     | ✅   | ✅     | ✅     |
@@ -167,7 +168,8 @@ Help users reduce food waste by finding recipes based on available ingredients.
 2.2.2 **Regular User's CRUD Functionality**
 | Feature                | Create | Read | Update | Delete |
 |------------------------|--------|------|--------|--------|
-| Recipes               | ✅     | ✅   | ✅  | ✅  |
+| Recipe Posts               | ✅     | ✅   | ✅  | ✅  |
+| Recipe Search              | ✅     | ✅   | ✅  | ✅  |
 | Blog Posts            | ❌     | ✅   | ❌     | ❌  
 | About                | ❌     | ✅   | ❌     | ❌  |
 | Comments              | ✅     | ✅   | ✅     | ✅     |
@@ -430,8 +432,8 @@ This project is deployed on Heroku. Here are the steps to deploy:
 ### Projects for Inspiration
 I have drawn some inspiration from these projects:
 
-https://github.com/Dee-McG/Recipe-Tutorial
-https://github.com/amylour/FreeFido_v2
+- https://github.com/Dee-McG/Recipe-Tutorial
+- https://github.com/amylour/FreeFido_v2
 
 ### Acknowledgements
 
