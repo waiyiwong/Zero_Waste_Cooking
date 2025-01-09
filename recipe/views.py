@@ -18,7 +18,7 @@ class RecipePostList(generic.ListView):
     """
     model = RecipePost
     template_name = "recipe/recipe.html"
-    paginate_by = 3
+    paginate_by = 6
 
     def get_queryset(self):
         query = self.request.GET.get('q')
