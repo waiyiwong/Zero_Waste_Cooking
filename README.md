@@ -436,12 +436,13 @@ This project is deployed on Heroku. Here are the steps to deploy:
 
 ### Code
 
+- Learned from Code Institute throughout these amazing 16 weeks
 - [Django Documentation](https://docs.djangoproject.com/): Used extensively for guidance on Django best practices and implementation.
 - [Bootstrap Documentation](https://getbootstrap.com/docs/): Used for responsive design components and styling.
 
 ### Content
 
-- As taught by the Code Institute through the LMS and guided sessions, Agile Methodology and the Five Planes of UX were key concepts I used to structure my README.
+- As taught by Code Institute through the LMS and guided sessions, Agile Methodology and the Five Planes of UX were key concepts I used to structure my README.
 - All recipe content is added by the site admin for demonstration purposes.
 
 ### Media
@@ -460,5 +461,6 @@ I have drawn some inspiration from these projects:
 
 ### Acknowledgements
 
-- Coding coach (JOHN and Roo), facilitators (Marko, Shelly, Vasi) and SME (Mark) for continuous helpful feedback.
+- Coding coach (Thank you! JOHN and Roo), facilitators (Marko, Shelly, Vasi) and SME (Mark) for continuous helpful feedback.
+- My wonderful Hackathon team mates for the 1st team project: Matthew and Daylion
 - The Code Institute Slack community for their support and advice.
