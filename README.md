@@ -376,7 +376,7 @@ JS validation for comments.js
 </details>   
 
 ### Python Validation
-[Pep8](https://pep8ci.herokuapp.com/) is used to validate if my python code meet Pep8 Standards
+The Python code in this Django project was validated for compliance with the PEP 8 style guide using  [**Flake 8 Linting Support**](https://flake8.pycqa.org/en/latest/) in Gitpod and a [**CI Python Linter**](https://pep8ci.herokuapp.com/) to systematically check the code for adherence to Python coding standards. While the majority of the code passed these validations, a few minor deviations remain unresolved, e.g. line too long. These exceptions were carefully reviewed and deemed acceptable as they do not affect the functionality or maintainability of the project.  
 <details open>
 <summary>Python validation</summary>  
 
@@ -385,13 +385,35 @@ JS validation for comments.js
 
 
 ### **Bugs & Fixes**
-- Failed to render recipe app (- check all python files in recipe app and project level urls.py, seek help from Google, chatGPT and Slack community)
-- Failed to load images when debug mode switched from true to false (1. check all python files in recipe app and project level urls.py, seek help from Google, chatGPT and Slack community. 2. make sure all images file in static folder and correct directory and then run command in terminal "python3 manage.py collectstatic". )
-- Failed to load cloudinary images after deploying to Heroku (- Set Config Vars and Cloudinary_URL on Heroku)
-- Edit and delete button for comments fails to operate as normal (help from John on slack channel) spotted js script "defer" affects js normal functionality and correct naming of objects
+
+1. **Failed to Render Recipe App**  
+   - **Issue**: The recipe app failed to render.  
+   - **Fix**: Checked all Python files in the `recipe` app and `urls.py` at the project level. Sought help from Google, ChatGPT, and the Slack community to identify and resolve the issue.
+
+2. **Failed to Load Images When Debug Mode Was Set to False**  
+   - **Issue**: Images did not load when `DEBUG` mode was switched from `True` to `False`.  
+   - **Fix**:  
+     1. Verified all Python files in the `recipe` app and `urls.py` at the project level.  
+     2. Ensured all image files were in the correct `static` folder directory.  
+     3. Ran the command `python3 manage.py collectstatic` in the terminal to properly configure static files.  
+     4. Assistance was sought from Google, ChatGPT, and the Slack community.
+
+3. **Failed to Load Cloudinary Images After Deploying to Heroku**  
+   - **Issue**: Cloudinary-hosted images were not loading after deploying the project to Heroku.  
+   - **Fix**: Set the `Config Vars` and `CLOUDINARY_URL` on Heroku to enable proper loading of images.
+
+4. **Edit and Delete Buttons for Comments Failed to Operate**  
+   - **Issue**: The edit and delete buttons for comments were not functioning as expected.  
+   - **Fix**: Received assistance from John on the Slack channel. The issue was traced to a `defer` attribute in the JavaScript script, which affected normal functionality. Additionally, corrected the naming of JavaScript objects to resolve the issue.
+
+5. **Delete Button on Recipe Post Modal**  
+   - **Issue**: Clicking the delete button in the recipe post JS & modal redirected to the wrong link (`recipe/slug/delete/post_id`) instead of the correct link (`recipe/delete/post_id`). This prevented the post from being deleted.  
+   - **Fix**: Replaced the JS & modal function with a confirmation deletion template page, which resolved the issue and works perfectly.
 
 ### **Unsolved Bugs**
-JS line 49-55 delete recipe post (replace delete model to a template page to delete)
+- **Delete Recipe Post Button Modal**  
+  - **Issue**: The delete functionality for recipe posts has the issue mentioned above, where the post cannot be deleted when using the delete button on modal (on comments.js Line 49-55).
+  - **Proposed Fix**: Plan to modify the `urls.py` file to correct the link and resolve the issue. I will seek further support from Google search and so.
 
 ## Deployment
 
