@@ -94,32 +94,20 @@ AC 3: If no recipes match the entered ingredient, display a message indicating t
 
 The following table summarises the user stories, their prioritisation, and their associated sprints:
 | #  | Title of User Story                                | MoSCoW Prioritisation | Sprint Number |
-|----|--------------------------------------|------------------------|---------------|
-| 1  | Search for recipes by ingredients    | Should Have            | Sprint 2      |
-| 2  | Show the main purpose of the site    | Must Have             | Sprint 1      |
-| 3  | Sign up as a member                  | Must Have             | Sprint 1      |
-| 4  | Share recipes with the community     | Should Have            | Sprint 2      |
-| 5  | Save favorite recipes                | Could Have            | Sprint 3      |
-| 6  | Comment on recipes and engage        | Must Have             | Sprint 1      |
-| 7  | Sign in as members                   | Must Have             | Sprint 1      |
-| 8  | Scan food barcode to log ingredients | Won't Have            | N/A           |
-| 9  | Show nutrition value and calories    | Won't Have            | N/A           |
-| 10 | See blog posts and recipes posted by the admin      | Must Have             | Sprint 1      |
-| 11 | Sign-in to see personal profile page | Could Have            | Sprint 3      |
+|----|----------------------------------------------------|------------------------|---------------|
+| 1  | Show the main purpose of the site (MVP)            | Must Have             | Sprint 1      |
+| 2  | See blog posts and recipes posted by the admin (MVP)| Must Have             | Sprint 1      |
+| 3  | Sign up as a member to comment (MVP)               | Must Have             | Sprint 1      |
+| 4  | Sign in as members (MVP)                           | Must Have             | Sprint 1      |
+| 5  | Comment on recipes and engage with users (MVP)     | Must Have             | Sprint 1      |
+| 6  | Search for recipes by ingredients                  | Should Have           | Sprint 2      |
+| 7  | Share recipes with the community                   | Should Have           | Sprint 2      |
+| 8  | Save favorite recipes                              | Could Have            | Sprint 3      |
+| 9  | Sign-in to see personal profile page               | Could Have            | Sprint 3      |
+| 10 | Scan food barcode to log ingredients               | Won't Have            | N/A           |
+| 11 | Show nutrition value and calculate calories        | Won't Have            | N/A           |
 
-### All User Stories
-
-- (MVP) Show the main purpose of the site: As a first-time visitor, I want to easily understand the main purpose of the site and learn more about zero-waste cooking, so that I can decide whether to use it or not.
-- (MVP) See recipes and blog posts: As a user, I want to be able to see recipes and blog posts, so that I can learn more about zero-waste recipes and cooking techniques.
-- (MVP) Sign up as a member to comment: As a user, I want to sign up as a member, so that I can comment on recipes and posts.
-- (MVP) Sign in to post, edit, and delete posts and comments: As a logged-in user, I want to be able to post, edit, and delete posts and comments.
-- (MVP) Comment on recipes and engage with other users: As a user, I want to be able to comment on recipes and engage with other users, so that I can learn from others, share my tips, and build a community around zero-waste cooking.
-- Search for recipes by ingredients: As a user, I want to search for recipes based on ingredients I have available, so that I can use up what I have and avoid food waste.
-- Share recipes with the community: As a registered user, I want to be able to share my own recipes with the community, so that I can contribute to the site and help others.
-- Save favorite recipes: As a user, I want to be able to save my favorite recipes for easy access later, so that I can quickly find and cook the recipes I enjoy.
-- Sign-in to see my personal profile page: As a user, I want to be able to sign in to the app so that I can access my personal information and settings.
-- Scan food barcode to log ingredients: As a user, I want to be able to scan the barcode of a food item, so that I can easily log its ingredients.
-- Show nutrition value and calculate calories: As a user, I want to be able to see the nutrition value of a food item and calculate its calories, so that I can make informed choices about what I eat.
+** All User Stories, their descriptions and acceptance criteria can be found on [my Kanban board here](https://github.com/users/waiyiwong/projects/3/views/1).
 
 ## User Experience (UX)
 
@@ -127,13 +115,13 @@ The following table summarises the user stories, their prioritisation, and their
 ### 1. Strategy Plane
 
 #### 1.1 Goal:
-Help users reduce food waste by finding recipes based on available ingredients.
+Help users reduce food waste by finding recipes and information on the topic.
 
 #### 1.2 User Needs:
-- Reduce food waste by finding recipes with available ingredients.
 - Access sustainable cooking tips and recipes.
-- Engage with other users through comments and sharing.
 - Learn about zero-waste cooking practices.
+- Engage with other users through comments and sharing.
+- Reduce food waste by finding recipes with available ingredients.
 
 #### 1.3 Business Goals:
 - Encourage sustainability in the kitchen.
@@ -149,10 +137,11 @@ Help users reduce food waste by finding recipes based on available ingredients.
 1. **Responsive Navigation Bar**: Allows users to easily navigate the site on all devices.
 2. **User Authentication**: Enables users to register, log in, and log out.
 3. **Recipe Search**: Allows users to search for recipes based on available ingredients.
-4. **Dietary Preference Search**: filters dietary restrictions and cuisine type
+4. **Dietary Preference Search**: recipe search by dietary restrictions and cuisine type
 5. **Recipe Details Page**: Displays full recipe information, including ingredients, instructions, and user comments.
 6. **Commenting System**: Allows users to engage with recipes by leaving comments.
-7. **Responsive Design**: Ensures the site is fully functional and visually appealing on all device sizes.
+7. **Zero Waste Cooking Tips**: Allows users to browse and learn about zero-waste cooking practices.
+8. **Responsive Design**: Ensures the site is fully functional and visually appealing on all device sizes.
 
 #### 2.2 CRUD Functionality for Key Features
 2.2.1 **Admin's CRUD Functionality**
@@ -206,7 +195,7 @@ Learn about the origins of the Zero Waste Cooking website, the motivations behin
 The footer includes essential copyright information and social media links for users to stay connected and engage with the Zero Waste Cooking community online.
 
 #### 3.7 Navigation:
-Simple top navbar with links to landing page, recipes, blog, about page, and user login/sign up.
+Simple top navbar with links to home, recipe, blog, about, and user login/sign up pages.
 
 ---
 
@@ -242,7 +231,7 @@ Wireframe - Homepage Desktop & Mobile
 
 #### 5.2 Color Scheme
 
-The color scheme focuses on sustainability, complemented by a natural, organic feel.
+The color scheme focuses on sustainability and provides a natural, organic feel.
 
 ![Zero Waste Cooking color scheme](static/images/color_scheme.png)
 
@@ -266,7 +255,7 @@ The site uses a clean, modern "League Gothic", serif fonts for easy readability 
 
 #### 5.4 Imagery
 
-I used AI image generation (via Freepik) to create the majority of the images on the site. These AI-generated images served as the foundation for redesigning and customizing the logo, hero image, and post images. The final designs were refined by myself using Adobe Fresco and Canva. 
+I used AI image generation (Freepik) to create the majority of the images on the site. These AI-generated images served as the foundation for redesigning and customising the logo, hero image, and post images. The final designs were refined by myself using Adobe Fresco and Canva. 
 The recipe imagery throughout the site is focused on fresh ingredients, completed dishes, and sustainable cooking practices.
 
 ## Technologies Used
@@ -285,10 +274,10 @@ The recipe imagery throughout the site is focused on fresh ingredients, complete
 3. [Bootstrap](https://getbootstrap.com/): Used for responsive design and styling.
 4. [Git](https://git-scm.com/): Used for version control.
 5. [GitHub](https://github.com/): Used to store the project repository.
-6. [Cloudinary](https://cloudinary.com/): Used for image hosting and management. (If implemented)
+6. [Cloudinary](https://cloudinary.com/): Used for image hosting and management.
 7. [Gunicorn](https://gunicorn.org/): Used as the HTTP server for deploying the Django application.
 8. Google Dev Tools - to debug and for testing responsiveness 
-9. [Am I Responsive](https://ui.dev/amiresponsive) and [Ignore X-Frame Headers Extension](https://chromewebstore.google.com/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe) - to acquire the responsiveness screenshot
+9. [Am I Responsive](https://ui.dev/amiresponsive) and [Ignore X-Frame Headers Extension](https://chromewebstore.google.com/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe) - to acquire the responsiveness screenshots
 
 ## Testing
 To ensure the functionality and reliability of the site, both automated and manual testing were adopted throughout the development process. 
@@ -300,12 +289,12 @@ A total of 14 automated tests were written and successfully passed, covering key
 
 **Manual testing**
 
-Manual testing was conducted to evaluate the site’s responsiveness, accessibility, and user experience across various devices and platforms. Testing was performed on devices such as the iPhone 15 Pro, Sony Xperia, iPad Pro, MacBook Air, and MacBook Pro to ensure the layout adapted seamlessly to different screen sizes. Additionally, the site was tested across major browsers, including Google Chrome and Safari, to verify cross-browser compatibility. The testing process focused on assessing the layout’s responsiveness, adherence to accessibility standards, and overall usability. Forms and pages were also tested with incorrect inputs to ensure proper error messages were displayed. No issues were identified during manual testing, and the site performed as expected across all tested devices and platforms.
+Manual testing was conducted to evaluate the site’s responsiveness, accessibility, and user experience across various devices and platforms. Testing was performed on devices such as the iPhone 15 Pro, Sony Xperia, iPad Pro, MacBook Air, and MacBook Pro to ensure the layout adapted seamlessly to different screen sizes. Additionally, the site was tested across major browsers, including Google Chrome and Safari, to verify cross-browser compatibility. 
 
-This combination of automated and manual testing ensures the site’s performance and quality are maintained across a range of devices and platforms.
+Forms and pages were also tested with incorrect inputs to ensure proper error messages were displayed. No issues were identified during manual testing, and the site performed as expected across all tested devices and platforms.
 
 ### Google Lighthouse performance
-for auditing the website
+for auditing the website. Performance, Accessibility and SEO are above 90 points, while Best Practices scored 61 due to Cloudinary images not being served in HTTPS format.
 <details open>
 <summary>Google Lighthouse Performance Score</summary>  
 
@@ -313,7 +302,7 @@ for auditing the website
 </details>
 
 ### WAVE Web Accessibility Evaluation Tools
-[WAVE Web Accessibility Evaluation Tools](https://wave.webaim.org/) is used to check the accessibility of the site
+[WAVE Web Accessibility Evaluation Tools](https://wave.webaim.org/) is used to check the accessibility of the site. No error found.
 <details open>
 <summary>WAVE Web Accessibility Evaluation Result</summary>
 
@@ -322,7 +311,7 @@ for auditing the website
 </details>
 
 ### HTML Validation
-[W3C HTML Validation](https://validator.w3.org/) is used to validate html codes for all pages
+[W3C HTML Validation](https://validator.w3.org/) is used to validate html codes for all pages. No errors found except 2 pages. Explanations are provided below.
 <details open>
 <summary>Screenshots of all HTML validations</summary>  
 
@@ -334,11 +323,11 @@ Recipe page
 
 About page
 ![w3c_html_validation for recipe page.png](static/images/validate_about.png)
-The W3C Validator shows 5 errors related to the obsolete `<font>` tag. These are generated by the rich-text editor, not the project's custom code. They do not impact functionality but stem from legacy HTML rendering by the editor.
+The W3C Validator reports 5 errors related to the obsolete < font> tag. These errors are generated by the rich-text editor (Summernote) rather than my code of this project. While they don't affect the site's functionality, they result from the editor's legacy HTML rendering. Although I could eliminate these errors by resetting the font color to the default in the rich-text editor, I prefer to retain the customized color for improved readability and to maintain consistency with my site's color scheme.
 
 Sign up page
 ![w3c_html_validation for sign up page.png](static/images/validate_sign_up.png)
-The W3C Validator flagged errors like unclosed tags and stray end tags, but these issues are not present in my source code. All elements and closing tags are correctly structured. The errors likely stem from how the validator interprets the rendered HTML.
+The W3C Validator flagged errors like unclosed tags and stray end tags, but these issues are not present in my code in my template/signup.html. All elements and closing tags are properly closed and structured. The errors likely stem from how the validator interprets the rendered HTML.
 
 Sign in page
 ![w3c_html_validation for sign in page.png](static/images/validate_sign_in.png)
@@ -349,7 +338,7 @@ Sign out page
 </details>
 
 ### CSS Validation
-[Jigsaw](https://jigsaw.w3.org/css-validator/) is for validating my CSS
+[Jigsaw](https://jigsaw.w3.org/css-validator/) is for validating my CSS with no error found.
 <details open>
 <summary>CSS validation</summary>  
 
@@ -357,26 +346,34 @@ Sign out page
 </details>
 
 ### Javascript Validation
-[Jshint](https://jshint.com/) is for validating my Javascript
+[JSHint version 2.13.6](https://jshint.com/) is for validating my Javascript.
 
 <details open>
 <summary>JS validation</summary>  
 
 JS validation for comments.js
 ![w3c_js_validation.png](static/images/validate_comments_js.png)
-- Functions: The file contains 2 functions, each with low complexity and a maximum of 5 statements.
-- Warnings: 19 warnings related to ES6 features (const, let, arrow functions, template literals) due to missing esversion: 6 configuration.
-- Undefined Variable: bootstrap is referenced but not defined.
+**Metrics**
+- There are 3 functions in this file.
+- Function with the largest signature take 1 arguments, while the median is 1.
+- Largest function has 5 statements in it, while the median is 3.
+- The most complex function has a cyclomatic complexity value of 1 while the median is 1.
 
-JS validation for comments.js
+**One undefined variable**
+-	bootstrap
+
+
+JS validation for script.js
 ![w3c_js_validation.png](static/images/validate_script_js.png)
-- Functions: The file contains 4 functions with low complexity. The largest function has 4 statements, and the most complex function has a cyclomatic complexity of 2.
-- Warnings: 7 warnings primarily related to ES6 features (const, arrow functions) due to missing esversion: 6 configuration.
-
+**Metrics**
+- There are 4 functions in this file.
+- Function with the largest signature take 1 arguments, while the median is 1.
+- Largest function has 4 statements in it, while the median is 0.5.
+- The most complex function has a cyclomatic complexity value of 2 while the median is 1.
 </details>   
 
 ### Python Validation
-The Python code in this Django project was validated for compliance with the PEP 8 style guide using  [**Flake 8 Linting Support**](https://flake8.pycqa.org/en/latest/) in Gitpod and a [**CI Python Linter**](https://pep8ci.herokuapp.com/) to systematically check the code for adherence to Python coding standards. While the majority of the code passed these validations, a few minor deviations remain unresolved, e.g. line too long. These exceptions were carefully reviewed and deemed acceptable as they do not affect the functionality or maintainability of the project.  
+The Python code in this Django project was validated for compliance with the PEP 8 style guide using  [**Flake 8 Linting Support**](https://flake8.pycqa.org/en/latest/) in Gitpod and [**CI Python Linter**](https://pep8ci.herokuapp.com/) to systematically check the code for adherence to Python coding standards. While the majority of the code passed these validations, a few minor deviations remain unresolved, e.g. line too long. These exceptions were carefully reviewed and deemed acceptable as they do not affect the functionality or maintainability of the project.  
 <details open>
 <summary>Python validation</summary>  
 
@@ -408,7 +405,7 @@ The Python code in this Django project was validated for compliance with the PEP
 
 5. **Delete Button on Recipe Post Modal**  
    - **Issue**: Clicking the delete button in the recipe post JS & modal redirected to the wrong link (`recipe/slug/delete/post_id`) instead of the correct link (`recipe/delete/post_id`). This prevented the post from being deleted.  
-   - **Fix**: Replaced the JS & modal function with a confirmation deletion template page, which resolved the issue and works perfectly.
+   - **Fix**: Replaced the JS & modal function with a confirmation deletion template page, which resolved the issue and now works perfectly.
 
 ### **Unsolved Bugs**
 - **Delete Recipe Post Button Modal**  
@@ -447,7 +444,7 @@ This project is deployed on Heroku. Here are the steps to deploy:
 
 ### Media
 
-- Default recipe images and site graphics are sourced from [Freepik](https://www.freepik.com/) and [Fontawesome](https://fontawesome.com/).
+- Default recipe images and site graphics are sourced from [Freepik](https://www.freepik.com/) and [Fontawesome](https://fontawesome.com/). Some of them are further edited by myself.
 
 ### AI Assistance
 - V1
@@ -461,6 +458,6 @@ I have drawn some inspiration from these projects:
 
 ### Acknowledgements
 
-- Coding coach (Thank you! JOHN and Roo), facilitators (Marko, Shelly, Vasi) and SME (Mark) for continuous helpful feedback.
+- Coding coach (Thank you! JOHN and Roo), facilitators (Marko, Shelly, Vasi) and SME (Mark) for continuous helpful feedback and support.
 - My wonderful Hackathon team mates for the 1st team project: Matthew and Daylion
 - The Code Institute Slack community for their support and advice.
