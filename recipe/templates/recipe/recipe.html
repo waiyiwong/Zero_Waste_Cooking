@@ -6,38 +6,37 @@
     <div class="row">
         <h1 class="gradient">Zero Waste Recipes</h1>
 
-        <!--Message to User when Succesfully Add Recipe on base.html-->
+        <!--Django Message to User goes here (code on navbar, base.html)-->
         <div class="container-fluid">
             <div class="row">
                 <!-- Recipe Search -->
-                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <form class="d-flex w-100" role="search" action="{% url 'recipe' %}">
-                        <input class="form-control w-100" name="q" type="search"
-                            placeholder="Enter ingredients to search for recipes" aria-label="Search">
-                        <button class="btn btn-success w-100" type="submit">Search<br>Recipes</button>
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <form class="d-flex col-lg-8 col-md-10 col-11" role="search" action="{% url 'recipe' %}">
+                        <div class="form-floating flex-grow-1 me-2">
+                            <input 
+                                class="form-control" 
+                                id="floatingSearch" 
+                                name="q" 
+                                type="search" 
+                                placeholder="Enter ingredient, cuisine or dietary type to search for recipes" 
+                                aria-label="Search Recipes">
+                            <!-- Label for larger devices -->
+                            <label for="floatingSearch" class="d-none d-md-block">Enter ingredient, cuisine or dietary type to search for recipes</label>
+                            <!-- Label for smaller devices -->
+                            <label for="floatingSearch" class="d-block d-md-none">Enter ingredient, cuisine or dietary</label>
+                        </div>
+                        <button class="btn btn-success btn-zwc-green ms-2 ms-sm-0" type="submit">Search Recipes</button>
                     </form>
-                </div>
-                <br>
-
-                <!-- Add Recipe Only by Logged-in Users -->
-                <div class="col-12 col-md-6 text-center">
-                    {% if request.user.is_authenticated %}
-                    <a href="{% url 'add_recipe' %}" class="btn btn-success w-100">Add Recipe
-                        <br>
-                        Click here to share your recipe with others
-                    </a>
-                    {% else %}
-                    <p>Want to share your recipe? Please <a href="{% url 'account_login' %}">login</a> or <a
-                            href="{% url 'account_signup' %}">register</a> to add your recipe.</p>
-                    {% endif %}
                 </div>
             </div>
         </div>
-
+        
+        <br>
         <!-- Recipe Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for recipe_post in recipepost_list %} <!--from class RecipePost models.py-->
+                {% for recipe_post in recipepost_list %}
+                <!--from class RecipePost models.py-->
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -58,7 +57,6 @@
                                 <p class="card-text">{{ recipe_post.type_of_cuisine }}</p>
                                 <p class="card-text">{{ recipe_post.dietary_categories }}</p>
                             </a>
-
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe_post.created_on }}</p>
                         </div>

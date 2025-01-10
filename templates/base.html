@@ -78,11 +78,19 @@
                     </li>
                     {% endif %}
                 </ul>
-                <div class="ms-auto text-end ">
+                <!-- Weclome Message -->
+                <div class="ms-auto text-end mx-1">
                     {% if user.is_authenticated %}
-                    <p class="navbar-text"> Welcome {{ user }}   </p>
+                    <p class="greet-user"> Welcome {{ user }} </p>
                     {% else %}
-                    <p> </p>
+                    <p class="greet-user"> &larr; Login to share your recipe!</p>
+                    {% endif %}
+                </div>
+                <!-- Add Recipe Only by Authenticated Users -->
+                <div class="mx-1">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'add_recipe' %}" class="btn btn-success btn-zwc-green">Share Recipe Now
+                    </a>
                     {% endif %}
                 </div>
             </div>
@@ -125,13 +133,11 @@
         {% block copyright %}
         <p class="m-0 text-center text-light"> Copyright 2025 Wai Wong </p>
         {% endblock copyright %}
-        <p class="m-0 text-center text-light">Follow us: 
-            <a class="text-light btn btn-social" href="https://www.facebook.com/"
-            aria-label="YouTube- opens in new tab" target="_blank"><i class="fab fa-facebook-square ms-3"
-                aria-hidden="true"></i></a>
-            <a class="text-light btn btn-social" href="https://www.youtube.com/"
-                aria-label="YouTube- opens in new tab" target="_blank"><i class="fab fa-youtube ms-3"
-                    aria-hidden="true"></i></a>
+        <p class="m-0 text-center text-light">Follow us:
+            <a class="text-light btn btn-social" href="https://www.facebook.com/" aria-label="YouTube- opens in new tab"
+                target="_blank"><i class="fab fa-facebook-square ms-3" aria-hidden="true"></i></a>
+            <a class="text-light btn btn-social" href="https://www.youtube.com/" aria-label="YouTube- opens in new tab"
+                target="_blank"><i class="fab fa-youtube ms-3" aria-hidden="true"></i></a>
             <a class="text-light btn btn-social" href="https://www.instagram.com/"
                 aria-label="Instagram- opens in new tab" target="_blank"><i class="fab fa-instagram ms-3"
                     aria-hidden="true"></i></a>
