@@ -175,7 +175,11 @@ Help users reduce food waste by finding recipes and information on the topic.
 ---
 
 ### 3. Structure Plane
-**Website Structure:**
+**The Backend Database Architecture:**
+The Entity-Relationship Diagram (ERD) below illustrates the database structure for the Zero Waste Cooking website, detailing how data is stored and interrelated.
+![ERD](static/images/ERD.png)
+
+**The Frontend Website Structure:**
 #### 3.1 Landing Page with Navbar:
 The landing page features a hero image that visually communicates the purpose of the site — promoting zero waste cooking. It highlights the benefits of sustainable cooking practices, offering users an introduction to the core values of zero waste cooking.
 
@@ -446,6 +450,7 @@ This project is deployed on Heroku. Here are the steps to deploy:
 - Default recipe images and site graphics are sourced from [Freepik](https://www.freepik.com/) and [Fontawesome](https://fontawesome.com/). Some of them are further edited by myself.
 
 ### AI Assistance
+- [AI ERD Generator](https://www.eraser.io/ai/erd-generator)
 - V1
 - ChatGPT
 
