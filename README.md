@@ -28,6 +28,9 @@ Welcome to the Zero Waste Cooking project! This Django-based web application aim
     - [2.2 CRUD Functionality for Key Features](#22-crud-functionality-for-key-features)
     - [2.3 Out of Scope](#23-out-of-scope)
   - [3. Structure Plane](#3-structure-plane)
+    - [**The Backend Database Structure:**](#3-structure-plane)
+    - [Entity-Relationship Diagram](#3-structure-plane)
+    - [**The Frontend Website Structure:**](#31-landing-page-with-navbar)
     - [3.1 Landing Page with Navbar](#31-landing-page-with-navbar)
     - [3.2 Tagline](#32-tagline)
     - [3.3 Blog Post Page](#33-blog-post-page)
@@ -175,7 +178,8 @@ Help users reduce food waste by finding recipes and information on the topic.
 ---
 
 ### 3. Structure Plane
-**The Backend Database Architecture:**
+**The Backend Database Structure:**
+
 The Entity-Relationship Diagram (ERD) below illustrates the database structure for the Zero Waste Cooking website, detailing how data is stored and interrelated.
 ![ERD](static/images/ERD.png)
 
