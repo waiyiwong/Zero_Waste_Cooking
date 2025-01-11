@@ -45,13 +45,3 @@ for (let button of deleteButtons) {
       deleteModal.show();
     });
   }
-
-  for (let button of deleteButtons) {
-    button.addEventListener("click", (e) => {
-        let postId = e.target.getAttribute("data-post_id");
-        deleteConfirm.href = `delete/${postId}/`;
-        deleteModal.show();
-    });
-}
-
-  
