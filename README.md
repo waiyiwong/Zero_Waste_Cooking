@@ -409,8 +409,7 @@ The Python code in this Django project was validated for compliance with the PEP
 
 ### **Unsolved Bugs**
 - **Delete Recipe Post Button Modal**  
-  - **Issue**: The delete functionality for recipe posts has the issue mentioned above, where the post cannot be deleted when using the delete button on modal (on comments.js line 49-55).
-  - **Proposed Fix**: Although replacing the modal with a confirmation deletion template page resolved the deletion issue, I am eager to understand the root cause of the modal problem and find a solution. I plan to modify the `urls.py` file to correct the link and fully resolve the issue. I will continue to seek further support through Google searches and other resources.
+  - **Issue**: The issue is mentioned above. (Code originally on comments.js line 49-55, now deleted)
 
 ## Deployment
 
