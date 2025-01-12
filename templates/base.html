@@ -149,6 +149,34 @@
         </p>
     </footer>
 
+    <!-- Chatbot-->
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js">
+    </script>
+    <df-messenger
+    id ="df-messenger"
+      project-id="zero-waste-cooking"
+      agent-id="e3396887-ec22-4b2d-a6a8-059b4493efba"
+      language-code="en"
+      max-query-length="-1">
+      <df-messenger-chat-bubble
+       chat-title="Cook Hero Assistant">
+      </df-messenger-chat-bubble>
+    </df-messenger>
+    <style>
+      df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: Google Sans;
+        --df-messenger-chat-background: #F9FAFC;
+        --df-messenger-message-user-background: #68aa2c;
+        --df-messenger-message-bot-background: #C7DEAA;
+        bottom: 16px;
+        right: 16px;
+      }
+    </style>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     {% block extras %}
     {% endblock %}
