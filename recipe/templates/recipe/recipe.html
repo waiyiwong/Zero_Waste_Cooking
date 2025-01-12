@@ -23,7 +23,7 @@
                             <!-- Label for larger devices -->
                             <label for="floatingSearch" class="d-none d-md-block">Enter an ingredient, cuisine type, or dietary preference (e.g. vegan) to find recipes.</label>
                             <!-- Label for smaller devices -->
-                            <label for="floatingSearch" class="d-block d-md-none">Enter ingredient, cuisine or diet type</label>
+                            <label for="floatingSearch" class="d-block d-md-none">Enter ingredient, diet or cuisine type</label>
                         </div>
                         <button class="btn btn-success btn-zwc-green ms-2 ms-sm-0" type="submit">Search Recipes</button>
                     </form>
@@ -54,8 +54,8 @@
                             </div>
                             <a href="{% url 'recipe_post_detail' recipe_post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ recipe_post.title }}</h2>
-                                <p class="card-text">{{ recipe_post.type_of_cuisine }}</p>
-                                <p class="card-text">{{ recipe_post.dietary_categories }}</p>
+                                <p class="card-text">Dietary preferences: <strong>{{ recipe_post.dietary_categories }}</strong></p>
+                                <p class="card-text">Type of cuisine: <strong>{{ recipe_post.type_of_cuisine }}</strong></p>
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe_post.created_on }}</p>
