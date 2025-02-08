@@ -30,6 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     '8000-waiyiwong-zerowastecook-88nheiyqtr7.ws.codeinstitute-ide.net',
     '.herokuapp.com']
 
@@ -112,6 +113,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://localhost",
     "https://*.codeinstitute-ide.net/",
     "https://*.herokuapp.com"
 ]
